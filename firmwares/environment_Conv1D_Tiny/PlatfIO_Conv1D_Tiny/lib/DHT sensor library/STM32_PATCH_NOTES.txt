@@ -1,0 +1,10 @@
+Adafruit DHT - STM32 compatibility patch
+
+Changes are isolated with ARDUINO_ARCH_STM32 guards:
+1. STM32 default begin pull time: 80 us (other targets remain 55 us).
+2. STM32 pulse timeout: 2000 us (other targets remain 1000 us).
+3. STM32 pulse duration is measured with the Cortex-M DWT cycle counter.
+4. ESP32, ESP8266, AVR and all non-STM32 targets retain the original code path.
+
+Public API is unchanged. Existing calls such as dht.begin(),
+readTemperature() and readHumidity() remain compatible.

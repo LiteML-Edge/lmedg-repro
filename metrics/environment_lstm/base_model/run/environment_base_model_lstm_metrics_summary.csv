@@ -1,0 +1,45 @@
+﻿Baseline Model Metrics,Value,Status,Meaning,Expected Values / Thresholds
+MSE (normalized joint residual),0.0145,,"Mean squared error in the normalized scale for the joint residual target (ΔT_in, ΔH_in).",→ Lower is better.
+RMSE (normalized joint residual),0.1202,,Root mean squared error in the normalized scale.,→ Lower is better.
+MAE (normalized joint residual),0.0857,,Mean absolute error in the normalized scale.,→ Lower is better.
+R² (normalized joint residual),0.0263,,Coefficient of determination in the normalized scale.,→ Ideally > 0.95.
+MSE (joint original scale),0.0366,MSE within threshold,"Mean squared error in the original scale (°C / %RH) for the joint [T_in, H_in] target.","→ < 0.1 is excellent, depending on the problem."
+RMSE (joint original scale),0.1913,RMSE within threshold,Root mean squared error in the original scale for the joint target.,→ < 0.32 as a reference.
+MAE (joint original scale),0.1393,MAE within threshold,Mean absolute error in the original scale for the joint target.,→ < 0.30 as a reference.
+R² (joint original scale),0.9782,R² within threshold,Coefficient of determination in the original scale for the joint target.,→ > 0.8 is desirable.
+MSE_T (T_in),0.0321,,Mean squared error in the original scale for T_in.,→ Lower is better (T_in).
+RMSE_T (T_in),0.1791,,Root mean squared error in the original scale for T_in.,→ Lower is better (T_in).
+MAE_T (T_in),0.1271,,Mean absolute error in the original scale for T_in.,→ Lower is better (T_in).
+R²_T (T_in),0.9644,,Coefficient of determination in the original scale for T_in.,→ Ideally > 0.8 (T_in).
+MSE_H (H_in),0.0411,,Mean squared error in the original scale for H_in.,→ Lower is better (H_in).
+RMSE_H (H_in),0.2027,,Root mean squared error in the original scale for H_in.,→ Lower is better (H_in).
+MAE_H (H_in),0.1514,,Mean absolute error in the original scale for H_in.,→ Lower is better (H_in).
+R²_H (H_in),0.9920,,Coefficient of determination in the original scale for H_in.,→ Ideally > 0.8 (H_in).
+"N_ALL (rolling24 firmware, last window)",24,,Rolling(24): number of samples (HOUR events) effectively present in the final window.,→ Should reach 24 when the window is full (after warm-up).
+"MAE (rolling24 firmware, last window)",0.1473,,Rolling(24) aggregate (T+H) in the LAST window — comparable to the firmware log.,→ Lower is better (rolling24).
+"RMSE (rolling24 firmware, last window)",0.1985,,Rolling(24) aggregate (T+H) in the LAST window — comparable to the firmware log.,→ Lower is better (rolling24).
+"R² (rolling24 firmware, last window)",0.9182,,Rolling(24) aggregate (T+H) in the LAST window — comparable to the firmware log.,→ May be NaN when variance is low (same as firmware).
+"MAE_T (rolling24 firmware, last window)",0.0796,,Rolling(24) T_in in the LAST window — comparable to the firmware log.,→ Lower is better (rolling24 T_in).
+"RMSE_T (rolling24 firmware, last window)",0.0990,,Rolling(24) T_in in the LAST window — comparable to the firmware log.,→ Lower is better (rolling24 T_in).
+"R²_T (rolling24 firmware, last window)",0.8553,,Rolling(24) T_in in the LAST window — comparable to the firmware log.,→ May be NaN when variance is low.
+"MAE_H (rolling24 firmware, last window)",0.2149,,Rolling(24) H_in in the LAST window — comparable to the firmware log.,→ Lower is better (rolling24 H_in).
+"RMSE_H (rolling24 firmware, last window)",0.2627,,Rolling(24) H_in in the LAST window — comparable to the firmware log.,→ Lower is better (rolling24 H_in).
+"R²_H (rolling24 firmware, last window)",0.9810,,Rolling(24) H_in in the LAST window — comparable to the firmware log.,→ May be NaN when variance is low.
+"MAE (rolling24 firmware, test mean)",0.1394,,Rolling(24) aggregate (T+H) MEAN across the test set (window average).,→ Lower is better (window mean).
+"RMSE (rolling24 firmware, test mean)",0.1843,,Rolling(24) aggregate (T+H) MEAN across the test set (window average).,→ Lower is better (window mean).
+"R² (rolling24 firmware, test mean)",0.6322,,Rolling(24) aggregate (T+H) MEAN across the test set (window average).,→ May be NaN when variance is low.
+"MAE_T (rolling24 firmware, test mean)",0.1277,,Rolling(24) T_in MEAN across the test set (window average).,→ Lower is better (T_in window mean).
+"RMSE_T (rolling24 firmware, test mean)",0.1729,,Rolling(24) T_in MEAN across the test set (window average).,→ Lower is better (T_in window mean).
+"R²_T (rolling24 firmware, test mean)",0.4002,,Rolling(24) T_in MEAN across the test set (window average).,→ May be NaN when variance is low.
+"MAE_H (rolling24 firmware, test mean)",0.1511,,Rolling(24) H_in MEAN across the test set (window average).,→ Lower is better (H_in window mean).
+"RMSE_H (rolling24 firmware, test mean)",0.1891,,Rolling(24) H_in MEAN across the test set (window average).,→ Lower is better (H_in window mean).
+"R²_H (rolling24 firmware, test mean)",0.8641,,Rolling(24) H_in MEAN across the test set (window average).,→ May be NaN when variance is low.
+Model size (KB),74.38 KB,,Final model file size in kilobytes (KB).,→ Prefer < 256 KB on constrained MCUs.
+Mean training loss,0.0120,,Mean loss over the last training epochs.,"→ Low (for example, < 0.01)."
+Mean validation loss,0.0130,,Mean loss over the last validation epochs.,→ Close to the training loss.
+Absolute gap,0.0010,,Absolute difference between mean losses.,→ < 0.05 is good.
+Percentage gap (%),8.55 %,,Percentage gap between losses (validation vs training).,→ < 10% is excellent.
+Total inference time (ms),725.47 ms,,Total time to infer all test samples.,→ Lower is better.
+Inference time per sample (ms),0.37 ms,,Mean time to infer a single sample.,→ < 1 ms is ideal in TinyML.
+Fit Status,,Well-fitted model (generalization gap < 10%),Fit diagnosis based on losses and generalization gap.,→ 'Well-fitted model' when the generalization gap is low and losses remain stable.
+Model Status,,Performance thresholds satisfied,Overall diagnosis based on the predefined MSE/RMSE/MAE/R² thresholds.,→ 'Performance thresholds satisfied' when the model satisfies the predefined limits.

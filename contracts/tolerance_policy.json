@@ -1,0 +1,9 @@
+{
+  "raw_tensor_bytes_and_metadata": 0.0,
+  "model_input_numeric": 2e-06,
+  "decoded_raw_output": 2e-06,
+  "semantic_output": 2e-06,
+  "final_postprocessed_prediction": 2e-05,
+  "auxiliary_semantic_debug": 2e-05,
+  "policy_note": "Fixed values are applied uniformly across models and targets. Workbook calibration sheets report observed deviations but do not overwrite the adopted pass/fail thresholds."
+}

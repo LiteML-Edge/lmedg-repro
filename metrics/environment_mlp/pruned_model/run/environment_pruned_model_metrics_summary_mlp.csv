@@ -1,0 +1,47 @@
+﻿Metric,Value,Status,Meaning,Expected Values / Thresholds
+MSE (normalized residual),0.0151,,"Mean squared error in the normalized residual scale (ΔT_in, ΔH_in).","→ Lower is better (e.g., ≤ 0.001 is excellent)."
+RMSE (normalized residual),0.1230,,Root mean squared error in the normalized residual scale.,→ Lower is better (ideal < 0.05).
+MAE (normalized residual),0.0905,,Mean absolute error in the normalized residual scale.,→ Lower is better (ideal < 0.05).
+R² (normalized residual),-0.0492,,Coefficient of determination in the normalized residual scale.,→ Ideally > 0.95.
+MSE (joint original),0.0390,MSE within threshold,Joint mean squared error in the original scale (T_in + H_in).,"→ < 0.1 is considered excellent, depending on the variable."
+RMSE (joint original),0.1975,RMSE within threshold,Joint root mean squared error in the original scale.,→ Ideal < 0.32.
+MAE (joint original),0.1480,MAE within threshold,Joint mean absolute error in the original scale.,→ Ideal < 0.3.
+R² (joint original),0.9758,R² within threshold,Joint coefficient of determination in the original scale.,→ Desirable ≥ 0.8.
+MSE_T (T_in),0.0363,,Mean squared error for indoor temperature only (T_in).,→ Lower is better; compare with joint MSE.
+RMSE_T (T_in),0.1906,,Root mean squared error for indoor temperature.,→ Lower is better.
+MAE_T (T_in),0.1398,,Mean absolute error for indoor temperature.,→ Lower is better.
+R²_T (T_in),0.9597,,Coefficient of determination for indoor temperature.,→ Ideally close to 1.
+MSE_H (H_in),0.0417,,Mean squared error for indoor humidity only (H_in).,→ Lower is better; compare with T_in metrics.
+RMSE_H (H_in),0.2042,,Root mean squared error for indoor humidity.,→ Lower is better.
+MAE_H (H_in),0.1562,,Mean absolute error for indoor humidity.,→ Lower is better.
+R²_H (H_in),0.9919,,Coefficient of determination for indoor humidity.,→ Ideally close to 1.
+"N_ALL (rolling24 firmware, last window)",24,,Number of samples considered in the last N=24 window (must reach 24 after warm-up).,→ High sparsity indicates good compression provided that predictive metrics are preserved.
+"MAE (rolling24 firmware, last window)",0.1460,,"Aggregated MAE (mean of MAE_T and MAE_H) in the last N=24 window, consistent with firmware semantics.",→ High post-strip sparsity indicates a genuinely sparse deployment model.
+"RMSE (rolling24 firmware, last window)",0.1734,,"Aggregated RMSE in the last N=24 window, consistent with firmware semantics.",→ Ideal < 256 KB for TinyML; < 100 KB is excellent.
+"R² (rolling24 firmware, last window)",0.8074,,Aggregated R² (mean of R²_T and R²_H) in the last N=24 window; may be NaN under low-variance conditions.,→ Ideal < 0.01.
+"MAE_T (rolling24 firmware, last window)",0.1391,,"T_in MAE in the last N=24 window, consistent with firmware semantics.",→ Should remain close to training loss to avoid overfitting.
+"RMSE_T (rolling24 firmware, last window)",0.1596,,"T_in RMSE in the last N=24 window, consistent with firmware semantics.",→ < 0.05 is good; > 0.1 may indicate overfitting.
+"R²_T (rolling24 firmware, last window)",0.6243,,T_in R² in the last N=24 window; may be NaN under low-variance conditions.,→ < 10% is excellent; > 30% may indicate possible overfitting.
+"MAE_H (rolling24 firmware, last window)",0.1528,,"H_in MAE in the last N=24 window, consistent with firmware semantics.",→ Lower is better; ideal < 250 ms total for TinyML scenarios.
+"RMSE_H (rolling24 firmware, last window)",0.1862,,"H_in RMSE in the last N=24 window, consistent with firmware semantics.",→ Ideal < 1 ms per sample; < 10 ms is acceptable for many applications.
+"R²_H (rolling24 firmware, last window)",0.9905,,H_in R² in the last N=24 window; may be NaN under low-variance conditions.,→ Interpreted from the loss-behavior diagnostic text.
+"MAE (rolling24 firmware, test mean)",0.1484,,Mean aggregated MAE across the test set (mean over N=24 windows).,"→ Interpreted from the main evaluation metrics (MSE, RMSE, MAE, R²)."
+"RMSE (rolling24 firmware, test mean)",0.1908,,Mean aggregated RMSE across the test set (mean over N=24 windows).,
+"R² (rolling24 firmware, test mean)",0.5974,,Mean aggregated R² across the test set (mean over N=24 windows).,
+"MAE_T (rolling24 firmware, test mean)",0.1403,,Mean MAE_T across the test set (mean over N=24 windows).,
+"RMSE_T (rolling24 firmware, test mean)",0.1847,,Mean RMSE_T across the test set (mean over N=24 windows).,
+"R²_T (rolling24 firmware, test mean)",0.3355,,Mean R²_T across the test set (mean over N=24 windows).,
+"MAE_H (rolling24 firmware, test mean)",0.1564,,Mean MAE_H across the test set (mean over N=24 windows).,
+"RMSE_H (rolling24 firmware, test mean)",0.1907,,Mean RMSE_H across the test set (mean over N=24 windows).,
+"R²_H (rolling24 firmware, test mean)",0.8594,,Mean R²_H across the test set (mean over N=24 windows).,
+Sparsity before strip (%),48.29,,Percentage of weights equal to zero before strip_pruning (active pruning stage).,
+Sparsity after strip (%),46.63,,Percentage of weights equal to zero after strip_pruning (final deployment model).,
+Model size (KB),74.46,,Final size of the pruned model file in kilobytes.,
+Mean training loss,0.0114,,Mean loss over the last training epochs (MSE).,
+Mean validation loss,0.0124,,Mean loss over the last validation epochs (MSE).,
+Absolute gap,0.0010,,Absolute difference between mean validation and training losses.,
+Percentage gap (%),8.50,,Percentage gap between validation and training losses.,
+Total inference time (ms),287.09,,Total inference time on the test set.,
+Inference time per sample (ms),0.14,,Mean inference time per sample.,
+Generalization assessment,,Well-fitted model (generalization gap < 10%),Automatic generalization diagnosis based on training and validation behavior.,
+Overall model status,,Performance thresholds satisfied,Overall model diagnosis based on the main decision thresholds.,

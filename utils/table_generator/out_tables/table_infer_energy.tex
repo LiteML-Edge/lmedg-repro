@@ -1,0 +1,62 @@
+\begin{table}[!b]
+\centering
+\caption{PER-INFERENCE ENERGY AND LATENCY ($n=24$) UNDER ROLLING-24.}
+\label{tab:infer_energy}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.05}
+
+\begin{tabular*}{\columnwidth}{
+@{\extracolsep{\fill}}
+c
+c
+S[
+    table-column-width=1.02cm,
+    table-format=1.3,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=2.2,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=1.3,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=2.2,
+    table-number-alignment=center
+]
+@{}}
+\toprule
+\midrule
+\multirow[c]{3}{*}[-0.45ex]{\textbf{Model}} &
+\multirow[c]{3}{*}[-0.45ex]{\textbf{Hardware}} &
+\multicolumn{2}{c}{\textbf{Replay}} &
+\multicolumn{2}{c}{\textbf{Field}} \\
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+& &
+\multicolumn{1}{c}{$\boldsymbol{\overline{\Delta E}}$} &
+\multicolumn{1}{c}{$\boldsymbol{\overline{t}}$} &
+\multicolumn{1}{c}{$\boldsymbol{\overline{\Delta E}}$} &
+\multicolumn{1}{c}{$\boldsymbol{\overline{t}}$} \\
+& &
+\multicolumn{1}{c}{\textbf{(\si{\micro\watt\hour})}} &
+\multicolumn{1}{c}{\textbf{(\si{\milli\second})}} &
+\multicolumn{1}{c}{\textbf{(\si{\micro\watt\hour})}} &
+\multicolumn{1}{c}{\textbf{(\si{\milli\second})}} \\
+\midrule
+\multirow[c]{2}{*}{MLP} & WEMOS LOLIN32 & 0.165 & 1.08 & 0.146 & 1.06 \\
+ & NUCLEO-F411RE & 0.181 & 1.03 & 0.195 & 1.04 \\
+\multirow[c]{2}{*}{LSTM} & WEMOS LOLIN32 & 1.376 & 14.04 & 1.309 & 13.84 \\
+ & NUCLEO-F411RE & 1.910 & 25.46 & 2.134 & 25.48 \\
+\multirow[c]{2}{*}{Conv1D Tiny} & WEMOS LOLIN32 & 0.605 & 5.89 & 0.573 & 5.72 \\
+ & NUCLEO-F411RE & 0.598 & 6.55 & 0.628 & 6.56 \\
+\midrule
+\bottomrule
+\end{tabular*}
+\end{table}

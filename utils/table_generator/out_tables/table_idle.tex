@@ -1,0 +1,62 @@
+\begin{table}[!t]
+\centering
+\caption{BASELINE IDLE CURRENT AND POWER.}
+\label{tab:idle}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.05}
+
+\begin{tabular*}{\columnwidth}{
+@{\extracolsep{\fill}}
+>{\centering\arraybackslash}m{1.37cm}
+>{\centering\arraybackslash}m{2.04cm}
+S[
+    table-column-width=1.02cm,
+    table-format=2.2,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=3.2,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=2.2,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=3.2,
+    table-number-alignment=center
+]
+@{}}
+\toprule
+\midrule
+\multirow[c]{3.3}{*}{\textbf{Model}} &
+\multirow[c]{3.3}{*}{\textbf{Hardware}} &
+\multicolumn{2}{c}{\textbf{Replay}} &
+\multicolumn{2}{c}{\textbf{Field}} \\
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+& &
+\multicolumn{1}{c}{\(\mathbf{I}_{\mathrm{mean}}\)} &
+\multicolumn{1}{c}{\(\mathbf{P}_{\mathrm{mean}}\)} &
+\multicolumn{1}{c}{\(\mathbf{I}_{\mathrm{mean}}\)} &
+\multicolumn{1}{c}{\(\mathbf{P}_{\mathrm{mean}}\)} \\
+& &
+\multicolumn{1}{c}{\textbf{(mA)}} &
+\multicolumn{1}{c}{\textbf{(mW)}} &
+\multicolumn{1}{c}{\textbf{(mA)}} &
+\multicolumn{1}{c}{\textbf{(mW)}} \\
+\midrule
+\multirow[c]{2}{*}{MLP} & WEMOS LOLIN32 & 61.83 & 316.14 & 60.62 & 310.75 \\
+ & NUCLEO-F411RE & 55.12 & 270.29 & 58.12 & 286.43 \\
+\multirow[c]{2}{*}{LSTM} & WEMOS LOLIN32 & 61.88 & 316.69 & 60.14 & 308.49 \\
+ & NUCLEO-F411RE & 51.58 & 254.47 & 57.95 & 285.77 \\
+\multirow[c]{2}{*}{Conv1D Tiny} & WEMOS LOLIN32 & 60.75 & 311.07 & 59.90 & 307.23 \\
+ & NUCLEO-F411RE & 55.52 & 272.07 & 57.78 & 285.07 \\
+\midrule
+\bottomrule
+\end{tabular*}
+\end{table}

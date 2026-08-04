@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="568.953125pt" height="352.666875pt" viewBox="0 0 568.953125 352.666875" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-04-10T14:25:49.856896</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.7.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 352.666875 
+L 568.953125 352.666875 
+L 568.953125 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 40.853125 328.76375 
+L 561.753125 328.76375 
+L 561.753125 22.08375 
+L 40.853125 22.08375 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 64.530398 328.76375 
+L 164.224178 328.76375 
+L 164.224178 314.086958 
+L 64.530398 314.086958 
+z
+" clip-path="url(#pcdc04ca26f)" style="fill: #1f77b4"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 189.147623 328.76375 
+L 288.841403 328.76375 
+L 288.841403 262.170455 
+L 189.147623 262.170455 
+z
+" clip-path="url(#pcdc04ca26f)" style="fill: #1f77b4"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 313.764847 328.76375 
+L 413.458627 328.76375 
+L 413.458627 279.195423 
+L 313.764847 279.195423 
+z
+" clip-path="url(#pcdc04ca26f)" style="fill: #1f77b4"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 438.382072 328.76375 
+L 538.075852 328.76375 
+L 538.075852 36.68756 
+L 438.382072 36.68756 
+z
+" clip-path="url(#pcdc04ca26f)" style="fill: #1f77b4"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m8642c29579" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m8642c29579" x="114.377288" y="328.76375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- MSE -->
+      <g transform="translate(104.701506 343.166875) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-4d" d="M 5156 0 
+L 4634 0 
+L 4634 3006 
+Q 4634 3363 4678 3878 
+L 4666 3878 
+Q 4591 3575 4531 3444 
+L 3000 0 
+L 2744 0 
+L 1216 3419 
+Q 1150 3569 1081 3878 
+L 1069 3878 
+Q 1094 3609 1094 3000 
+L 1094 0 
+L 588 0 
+L 588 4481 
+L 1281 4481 
+L 2656 1356 
+Q 2816 997 2863 819 
+L 2881 819 
+Q 3016 1188 3097 1369 
+L 4500 4481 
+L 5156 4481 
+L 5156 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SegoeUIEmoji-53" d="M 378 181 
+L 378 800 
+Q 484 706 632 631 
+Q 781 556 945 504 
+Q 1109 453 1275 425 
+Q 1441 397 1581 397 
+Q 2066 397 2305 576 
+Q 2544 756 2544 1094 
+Q 2544 1275 2464 1409 
+Q 2384 1544 2243 1655 
+Q 2103 1766 1911 1867 
+Q 1719 1969 1497 2081 
+Q 1263 2200 1059 2322 
+Q 856 2444 706 2591 
+Q 556 2738 470 2923 
+Q 384 3109 384 3359 
+Q 384 3666 518 3892 
+Q 653 4119 872 4266 
+Q 1091 4413 1370 4484 
+Q 1650 4556 1941 4556 
+Q 2603 4556 2906 4397 
+L 2906 3806 
+Q 2509 4081 1888 4081 
+Q 1716 4081 1544 4045 
+Q 1372 4009 1237 3928 
+Q 1103 3847 1018 3719 
+Q 934 3591 934 3406 
+Q 934 3234 998 3109 
+Q 1063 2984 1188 2881 
+Q 1313 2778 1492 2681 
+Q 1672 2584 1906 2469 
+Q 2147 2350 2362 2219 
+Q 2578 2088 2740 1928 
+Q 2903 1769 2998 1575 
+Q 3094 1381 3094 1131 
+Q 3094 800 2964 570 
+Q 2834 341 2614 197 
+Q 2394 53 2106 -11 
+Q 1819 -75 1500 -75 
+Q 1394 -75 1237 -58 
+Q 1081 -41 918 -8 
+Q 756 25 611 73 
+Q 466 122 378 181 
+z
+" transform="scale(0.015625)"/>
+        <path id="SegoeUIEmoji-45" d="M 2963 0 
+L 588 0 
+L 588 4481 
+L 2863 4481 
+L 2863 4006 
+L 1113 4006 
+L 1113 2516 
+L 2731 2516 
+L 2731 2044 
+L 1113 2044 
+L 1113 475 
+L 2963 475 
+L 2963 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-4d"/>
+       <use xlink:href="#SegoeUIEmoji-53" x="89.794922"/>
+       <use xlink:href="#SegoeUIEmoji-45" x="142.919922"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m8642c29579" x="238.994513" y="328.76375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- RMSE -->
+      <g transform="translate(226.328106 343.166875) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-52" d="M 3800 0 
+L 3175 0 
+L 2425 1256 
+Q 2322 1431 2225 1554 
+Q 2128 1678 2026 1756 
+Q 1925 1834 1808 1870 
+Q 1691 1906 1544 1906 
+L 1113 1906 
+L 1113 0 
+L 588 0 
+L 588 4481 
+L 1925 4481 
+Q 2219 4481 2467 4407 
+Q 2716 4334 2898 4184 
+Q 3081 4034 3184 3811 
+Q 3288 3588 3288 3288 
+Q 3288 3053 3217 2858 
+Q 3147 2663 3017 2509 
+Q 2888 2356 2705 2248 
+Q 2522 2141 2294 2081 
+L 2294 2069 
+Q 2406 2019 2489 1955 
+Q 2572 1891 2647 1803 
+Q 2722 1716 2795 1605 
+Q 2869 1494 2959 1347 
+L 3800 0 
+z
+M 1113 4006 
+L 1113 2381 
+L 1825 2381 
+Q 2022 2381 2189 2440 
+Q 2356 2500 2478 2611 
+Q 2600 2722 2669 2883 
+Q 2738 3044 2738 3244 
+Q 2738 3603 2505 3804 
+Q 2272 4006 1831 4006 
+L 1113 4006 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-52"/>
+       <use xlink:href="#SegoeUIEmoji-4d" x="59.814453"/>
+       <use xlink:href="#SegoeUIEmoji-53" x="149.609375"/>
+       <use xlink:href="#SegoeUIEmoji-45" x="202.734375"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m8642c29579" x="363.611737" y="328.76375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- MAE -->
+      <g transform="translate(353.367206 343.166875) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-41" d="M 4056 0 
+L 3475 0 
+L 3000 1256 
+L 1100 1256 
+L 653 0 
+L 69 0 
+L 1788 4481 
+L 2331 4481 
+L 4056 0 
+z
+M 2828 1728 
+L 2125 3638 
+Q 2091 3731 2056 3938 
+L 2044 3938 
+Q 2013 3747 1972 3638 
+L 1275 1728 
+L 2828 1728 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-4d"/>
+       <use xlink:href="#SegoeUIEmoji-41" x="89.794922"/>
+       <use xlink:href="#SegoeUIEmoji-45" x="154.296875"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m8642c29579" x="488.228962" y="328.76375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- R² -->
+      <g transform="translate(483.407087 343.166875) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-b2" d="M 2056 1825 
+L 325 1825 
+L 325 2181 
+L 1075 2919 
+Q 1400 3238 1487 3408 
+Q 1575 3578 1575 3750 
+Q 1575 3931 1456 4045 
+Q 1338 4159 1144 4159 
+Q 775 4159 469 3841 
+L 469 4306 
+Q 731 4544 1203 4544 
+Q 1572 4544 1787 4337 
+Q 2003 4131 2003 3794 
+Q 2003 3316 1363 2706 
+L 850 2219 
+L 850 2206 
+L 2056 2206 
+L 2056 1825 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-52"/>
+       <use xlink:href="#SegoeUIEmoji-b2" x="59.814453"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 40.853125 328.76375 
+L 561.753125 328.76375 
+" clip-path="url(#pcdc04ca26f)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.7; stroke-width: 0.8"/>
+     </g>
+     <g id="line2d_6">
+      <defs>
+       <path id="m2f13349a1b" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m2f13349a1b" x="40.853125" y="328.76375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 0.0 -->
+      <g transform="translate(20.903125 332.465312) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-30" d="M 1681 -75 
+Q 1016 -75 642 497 
+Q 269 1069 269 2150 
+Q 269 3338 658 3947 
+Q 1047 4556 1781 4556 
+Q 3188 4556 3188 2259 
+Q 3188 1122 2791 523 
+Q 2394 -75 1681 -75 
+z
+M 1753 4122 
+Q 794 4122 794 2175 
+Q 794 356 1734 356 
+Q 2663 356 2663 2206 
+Q 2663 4122 1753 4122 
+z
+" transform="scale(0.015625)"/>
+        <path id="SegoeUIEmoji-2e" d="M 697 -69 
+Q 553 -69 451 34 
+Q 350 138 350 281 
+Q 350 425 451 529 
+Q 553 634 697 634 
+Q 844 634 947 529 
+Q 1050 425 1050 281 
+Q 1050 138 947 34 
+Q 844 -69 697 -69 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-30"/>
+       <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+       <use xlink:href="#SegoeUIEmoji-30" x="75.585938"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 40.853125 268.332736 
+L 561.753125 268.332736 
+" clip-path="url(#pcdc04ca26f)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.7; stroke-width: 0.8"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m2f13349a1b" x="40.853125" y="268.332736" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 0.2 -->
+      <g transform="translate(20.903125 272.034299) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-32" d="M 2413 3306 
+Q 2413 3513 2348 3666 
+Q 2284 3819 2173 3920 
+Q 2063 4022 1913 4072 
+Q 1763 4122 1588 4122 
+Q 1438 4122 1294 4081 
+Q 1150 4041 1014 3969 
+Q 878 3897 751 3797 
+Q 625 3697 516 3575 
+L 516 4125 
+Q 731 4334 998 4445 
+Q 1266 4556 1650 4556 
+Q 1925 4556 2159 4476 
+Q 2394 4397 2566 4244 
+Q 2738 4091 2836 3866 
+Q 2934 3641 2934 3350 
+Q 2934 3084 2873 2868 
+Q 2813 2653 2689 2462 
+Q 2566 2272 2378 2097 
+Q 2191 1922 1938 1741 
+Q 1622 1516 1417 1356 
+Q 1213 1197 1092 1058 
+Q 972 919 923 780 
+Q 875 641 875 459 
+L 3106 459 
+L 3106 0 
+L 341 0 
+L 341 222 
+Q 341 509 403 728 
+Q 466 947 609 1144 
+Q 753 1341 986 1537 
+Q 1219 1734 1556 1981 
+Q 1800 2156 1964 2315 
+Q 2128 2475 2228 2634 
+Q 2328 2794 2370 2958 
+Q 2413 3122 2413 3306 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-30"/>
+       <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+       <use xlink:href="#SegoeUIEmoji-32" x="75.585938"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 40.853125 207.901722 
+L 561.753125 207.901722 
+" clip-path="url(#pcdc04ca26f)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.7; stroke-width: 0.8"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m2f13349a1b" x="40.853125" y="207.901722" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 0.4 -->
+      <g transform="translate(20.903125 211.603285) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-34" d="M 2656 4481 
+L 2656 1522 
+L 3231 1522 
+L 3231 1053 
+L 2656 1053 
+L 2656 0 
+L 2150 0 
+L 2150 1053 
+L 44 1053 
+L 44 1497 
+Q 338 1828 638 2204 
+Q 938 2581 1211 2968 
+Q 1484 3356 1717 3742 
+Q 1950 4128 2109 4481 
+L 2656 4481 
+z
+M 622 1522 
+L 2150 1522 
+L 2150 3716 
+Q 1916 3306 1706 2984 
+Q 1497 2663 1308 2400 
+Q 1119 2138 947 1925 
+Q 775 1713 622 1522 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-30"/>
+       <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+       <use xlink:href="#SegoeUIEmoji-34" x="75.585938"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 40.853125 147.470709 
+L 561.753125 147.470709 
+" clip-path="url(#pcdc04ca26f)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.7; stroke-width: 0.8"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m2f13349a1b" x="40.853125" y="147.470709" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 0.6 -->
+      <g transform="translate(20.903125 151.172271) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-36" d="M 2919 4428 
+L 2919 3944 
+Q 2572 4122 2188 4122 
+Q 1591 4122 1233 3590 
+Q 875 3059 875 2169 
+L 888 2169 
+Q 1200 2803 1913 2803 
+Q 2500 2803 2847 2426 
+Q 3194 2050 3194 1419 
+Q 3194 759 2797 342 
+Q 2400 -75 1788 -75 
+Q 1113 -75 728 462 
+Q 344 1000 344 1972 
+Q 344 3150 847 3853 
+Q 1350 4556 2175 4556 
+Q 2644 4556 2919 4428 
+z
+M 1800 2369 
+Q 1403 2369 1156 2100 
+Q 909 1831 909 1466 
+Q 909 1006 1154 681 
+Q 1400 356 1806 356 
+Q 2194 356 2431 639 
+Q 2669 922 2669 1356 
+Q 2669 1831 2441 2100 
+Q 2213 2369 1800 2369 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-30"/>
+       <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+       <use xlink:href="#SegoeUIEmoji-36" x="75.585938"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <path d="M 40.853125 87.039695 
+L 561.753125 87.039695 
+" clip-path="url(#pcdc04ca26f)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.7; stroke-width: 0.8"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m2f13349a1b" x="40.853125" y="87.039695" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 0.8 -->
+      <g transform="translate(20.903125 90.741257) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-38" d="M 1281 2350 
+L 1281 2363 
+Q 475 2738 475 3450 
+Q 475 3934 844 4245 
+Q 1213 4556 1794 4556 
+Q 2319 4556 2656 4265 
+Q 2994 3975 2994 3519 
+Q 2994 2775 2163 2363 
+L 2163 2350 
+Q 3144 2000 3144 1138 
+Q 3144 581 2744 253 
+Q 2344 -75 1631 -75 
+Q 1056 -75 684 250 
+Q 313 575 313 1094 
+Q 313 1956 1281 2350 
+z
+M 2469 3456 
+Q 2469 3766 2275 3944 
+Q 2081 4122 1747 4122 
+Q 1434 4122 1217 3936 
+Q 1000 3750 1000 3463 
+Q 1000 2878 1728 2581 
+Q 2469 2888 2469 3456 
+z
+M 1694 2106 
+Q 838 1766 838 1119 
+Q 838 784 1086 570 
+Q 1334 356 1741 356 
+Q 2128 356 2373 567 
+Q 2619 778 2619 1100 
+Q 2619 1775 1694 2106 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-30"/>
+       <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+       <use xlink:href="#SegoeUIEmoji-38" x="75.585938"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <path d="M 40.853125 26.608681 
+L 561.753125 26.608681 
+" clip-path="url(#pcdc04ca26f)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.7; stroke-width: 0.8"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m2f13349a1b" x="40.853125" y="26.608681" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 1.0 -->
+      <g transform="translate(20.903125 30.310243) scale(0.1 -0.1)">
+       <defs>
+        <path id="SegoeUIEmoji-31" d="M 2263 0 
+L 1750 0 
+L 1750 3872 
+Q 1691 3813 1577 3736 
+Q 1463 3659 1320 3584 
+Q 1178 3509 1020 3443 
+Q 863 3378 713 3341 
+L 713 3859 
+Q 881 3906 1070 3986 
+Q 1259 4066 1442 4164 
+Q 1625 4263 1787 4370 
+Q 1950 4478 2069 4581 
+L 2263 4581 
+L 2263 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SegoeUIEmoji-31"/>
+       <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+       <use xlink:href="#SegoeUIEmoji-30" x="75.585938"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_11">
+     <!-- Value -->
+     <g transform="translate(14.603125 187.372187) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="SegoeUIEmoji-56" d="M 3919 4481 
+L 2259 0 
+L 1681 0 
+L 56 4481 
+L 641 4481 
+L 1881 928 
+Q 1941 756 1972 531 
+L 1984 531 
+Q 2009 719 2088 934 
+L 3353 4481 
+L 3919 4481 
+z
+" transform="scale(0.015625)"/>
+       <path id="SegoeUIEmoji-61" d="M 2809 0 
+L 2297 0 
+L 2297 500 
+L 2284 500 
+Q 1950 -75 1300 -75 
+Q 822 -75 551 178 
+Q 281 431 281 850 
+Q 281 1747 1338 1894 
+L 2297 2028 
+Q 2297 2844 1638 2844 
+Q 1059 2844 594 2450 
+L 594 2975 
+Q 1066 3275 1681 3275 
+Q 2809 3275 2809 2081 
+L 2809 0 
+z
+M 2297 1619 
+L 1525 1513 
+Q 1169 1463 987 1336 
+Q 806 1209 806 888 
+Q 806 653 973 504 
+Q 1141 356 1419 356 
+Q 1800 356 2048 623 
+Q 2297 891 2297 1300 
+L 2297 1619 
+z
+" transform="scale(0.015625)"/>
+       <path id="SegoeUIEmoji-6c" d="M 1031 0 
+L 519 0 
+L 519 4738 
+L 1031 4738 
+L 1031 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SegoeUIEmoji-75" d="M 3106 0 
+L 2594 0 
+L 2594 506 
+L 2581 506 
+Q 2263 -75 1594 -75 
+Q 450 -75 450 1288 
+L 450 3200 
+L 959 3200 
+L 959 1369 
+Q 959 356 1734 356 
+Q 2109 356 2351 632 
+Q 2594 909 2594 1356 
+L 2594 3200 
+L 3106 3200 
+L 3106 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SegoeUIEmoji-65" d="M 3091 1472 
+L 831 1472 
+Q 844 938 1119 647 
+Q 1394 356 1875 356 
+Q 2416 356 2869 713 
+L 2869 231 
+Q 2447 -75 1753 -75 
+Q 1075 -75 687 361 
+Q 300 797 300 1588 
+Q 300 2334 723 2804 
+Q 1147 3275 1775 3275 
+Q 2403 3275 2747 2869 
+Q 3091 2463 3091 1741 
+L 3091 1472 
+z
+M 2566 1906 
+Q 2563 2350 2352 2597 
+Q 2141 2844 1766 2844 
+Q 1403 2844 1150 2584 
+Q 897 2325 838 1906 
+L 2566 1906 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#SegoeUIEmoji-56"/>
+      <use xlink:href="#SegoeUIEmoji-61" x="54.984375"/>
+      <use xlink:href="#SegoeUIEmoji-6c" x="105.863281"/>
+      <use xlink:href="#SegoeUIEmoji-75" x="130.082031"/>
+      <use xlink:href="#SegoeUIEmoji-65" x="186.673828"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 40.853125 328.76375 
+L 40.853125 22.08375 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 561.753125 328.76375 
+L 561.753125 22.08375 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 40.853125 328.76375 
+L 561.753125 328.76375 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 40.853125 22.08375 
+L 561.753125 22.08375 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <!-- 0.0486 -->
+    <g transform="translate(101.272444 312.016958) scale(0.09 -0.09)">
+     <use xlink:href="#SegoeUIEmoji-30"/>
+     <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+     <use xlink:href="#SegoeUIEmoji-30" x="75.585938"/>
+     <use xlink:href="#SegoeUIEmoji-34" x="129.492188"/>
+     <use xlink:href="#SegoeUIEmoji-38" x="183.398438"/>
+     <use xlink:href="#SegoeUIEmoji-36" x="237.304688"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <!-- 0.2204 -->
+    <g transform="translate(225.889669 260.100455) scale(0.09 -0.09)">
+     <use xlink:href="#SegoeUIEmoji-30"/>
+     <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+     <use xlink:href="#SegoeUIEmoji-32" x="75.585938"/>
+     <use xlink:href="#SegoeUIEmoji-32" x="129.492188"/>
+     <use xlink:href="#SegoeUIEmoji-30" x="183.398438"/>
+     <use xlink:href="#SegoeUIEmoji-34" x="237.304688"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- 0.1640 -->
+    <g transform="translate(350.506894 277.125423) scale(0.09 -0.09)">
+     <use xlink:href="#SegoeUIEmoji-30"/>
+     <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+     <use xlink:href="#SegoeUIEmoji-31" x="75.585938"/>
+     <use xlink:href="#SegoeUIEmoji-36" x="129.492188"/>
+     <use xlink:href="#SegoeUIEmoji-34" x="183.398438"/>
+     <use xlink:href="#SegoeUIEmoji-30" x="237.304688"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- 0.9666 -->
+    <g transform="translate(475.124119 34.61756) scale(0.09 -0.09)">
+     <defs>
+      <path id="SegoeUIEmoji-39" d="M 538 75 
+L 538 569 
+Q 913 356 1331 356 
+Q 1941 356 2280 847 
+Q 2619 1338 2619 2241 
+Q 2613 2238 2606 2241 
+Q 2319 1663 1606 1663 
+Q 1031 1663 662 2053 
+Q 294 2444 294 3059 
+Q 294 3716 698 4136 
+Q 1103 4556 1734 4556 
+Q 2397 4556 2767 4032 
+Q 3138 3509 3138 2509 
+Q 3138 1269 2656 597 
+Q 2175 -75 1319 -75 
+Q 869 -75 538 75 
+z
+M 1688 4122 
+Q 1316 4122 1067 3842 
+Q 819 3563 819 3131 
+Q 819 2659 1062 2389 
+Q 1306 2119 1722 2119 
+Q 2084 2119 2336 2366 
+Q 2588 2613 2588 2969 
+Q 2588 3478 2338 3800 
+Q 2088 4122 1688 4122 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#SegoeUIEmoji-30"/>
+     <use xlink:href="#SegoeUIEmoji-2e" x="53.90625"/>
+     <use xlink:href="#SegoeUIEmoji-39" x="75.585938"/>
+     <use xlink:href="#SegoeUIEmoji-36" x="129.492188"/>
+     <use xlink:href="#SegoeUIEmoji-36" x="183.398438"/>
+     <use xlink:href="#SegoeUIEmoji-36" x="237.304688"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- Evaluation metrics - INT8-quantized LSTM model -->
+    <g transform="translate(171.871875 16.08375) scale(0.12 -0.12)">
+     <defs>
+      <path id="SegoeUIEmoji-76" d="M 3034 3200 
+L 1759 0 
+L 1256 0 
+L 44 3200 
+L 606 3200 
+L 1419 875 
+Q 1509 619 1531 428 
+L 1544 428 
+Q 1575 669 1644 863 
+L 2494 3200 
+L 3034 3200 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-74" d="M 2003 31 
+Q 1822 -69 1525 -69 
+Q 684 -69 684 869 
+L 684 2763 
+L 134 2763 
+L 134 3200 
+L 684 3200 
+L 684 3981 
+L 1197 4147 
+L 1197 3200 
+L 2003 3200 
+L 2003 2763 
+L 1197 2763 
+L 1197 959 
+Q 1197 638 1306 500 
+Q 1416 363 1669 363 
+Q 1863 363 2003 469 
+L 2003 31 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-69" d="M 781 4013 
+Q 644 4013 547 4106 
+Q 450 4200 450 4344 
+Q 450 4488 547 4583 
+Q 644 4678 781 4678 
+Q 922 4678 1020 4583 
+Q 1119 4488 1119 4344 
+Q 1119 4206 1020 4109 
+Q 922 4013 781 4013 
+z
+M 1031 0 
+L 519 0 
+L 519 3200 
+L 1031 3200 
+L 1031 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-6f" d="M 1856 -75 
+Q 1147 -75 723 373 
+Q 300 822 300 1563 
+Q 300 2369 740 2822 
+Q 1181 3275 1931 3275 
+Q 2647 3275 3048 2834 
+Q 3450 2394 3450 1613 
+Q 3450 847 3017 386 
+Q 2584 -75 1856 -75 
+z
+M 1894 2844 
+Q 1400 2844 1112 2508 
+Q 825 2172 825 1581 
+Q 825 1013 1115 684 
+Q 1406 356 1894 356 
+Q 2391 356 2658 678 
+Q 2925 1000 2925 1594 
+Q 2925 2194 2658 2519 
+Q 2391 2844 1894 2844 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-6e" d="M 3175 0 
+L 2663 0 
+L 2663 1825 
+Q 2663 2844 1919 2844 
+Q 1534 2844 1282 2555 
+Q 1031 2266 1031 1825 
+L 1031 0 
+L 519 0 
+L 519 3200 
+L 1031 3200 
+L 1031 2669 
+L 1044 2669 
+Q 1406 3275 2094 3275 
+Q 2619 3275 2897 2936 
+Q 3175 2597 3175 1956 
+L 3175 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-20" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-6d" d="M 5063 0 
+L 4550 0 
+L 4550 1838 
+Q 4550 2369 4386 2606 
+Q 4222 2844 3834 2844 
+Q 3506 2844 3276 2544 
+Q 3047 2244 3047 1825 
+L 3047 0 
+L 2534 0 
+L 2534 1900 
+Q 2534 2844 1806 2844 
+Q 1469 2844 1250 2561 
+Q 1031 2278 1031 1825 
+L 1031 0 
+L 519 0 
+L 519 3200 
+L 1031 3200 
+L 1031 2694 
+L 1044 2694 
+Q 1384 3275 2038 3275 
+Q 2366 3275 2609 3092 
+Q 2853 2909 2944 2613 
+Q 3300 3275 4006 3275 
+Q 5063 3275 5063 1972 
+L 5063 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-72" d="M 2188 2681 
+Q 2053 2784 1800 2784 
+Q 1472 2784 1251 2475 
+Q 1031 2166 1031 1631 
+L 1031 0 
+L 519 0 
+L 519 3200 
+L 1031 3200 
+L 1031 2541 
+L 1044 2541 
+Q 1153 2878 1378 3067 
+Q 1603 3256 1881 3256 
+Q 2081 3256 2188 3213 
+L 2188 2681 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-63" d="M 2700 147 
+Q 2331 -75 1825 -75 
+Q 1141 -75 720 370 
+Q 300 816 300 1525 
+Q 300 2316 753 2795 
+Q 1206 3275 1963 3275 
+Q 2384 3275 2706 3119 
+L 2706 2594 
+Q 2350 2844 1944 2844 
+Q 1453 2844 1139 2492 
+Q 825 2141 825 1569 
+Q 825 1006 1120 681 
+Q 1416 356 1913 356 
+Q 2331 356 2700 634 
+L 2700 147 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-73" d="M 325 116 
+L 325 666 
+Q 744 356 1247 356 
+Q 1922 356 1922 806 
+Q 1922 934 1864 1023 
+Q 1806 1113 1707 1181 
+Q 1609 1250 1476 1304 
+Q 1344 1359 1191 1419 
+Q 978 1503 817 1589 
+Q 656 1675 548 1783 
+Q 441 1891 386 2028 
+Q 331 2166 331 2350 
+Q 331 2575 434 2748 
+Q 538 2922 709 3039 
+Q 881 3156 1101 3215 
+Q 1322 3275 1556 3275 
+Q 1972 3275 2300 3131 
+L 2300 2613 
+Q 1947 2844 1488 2844 
+Q 1344 2844 1228 2811 
+Q 1113 2778 1030 2718 
+Q 947 2659 901 2576 
+Q 856 2494 856 2394 
+Q 856 2269 901 2184 
+Q 947 2100 1034 2034 
+Q 1122 1969 1247 1916 
+Q 1372 1863 1531 1800 
+Q 1744 1719 1912 1633 
+Q 2081 1547 2200 1439 
+Q 2319 1331 2383 1190 
+Q 2447 1050 2447 856 
+Q 2447 619 2342 444 
+Q 2238 269 2063 153 
+Q 1888 38 1659 -18 
+Q 1431 -75 1181 -75 
+Q 688 -75 325 116 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-2d" d="M 2156 1581 
+L 450 1581 
+L 450 1984 
+L 2156 1984 
+L 2156 1581 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-49" d="M 1113 0 
+L 588 0 
+L 588 4481 
+L 1113 4481 
+L 1113 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-4e" d="M 4200 0 
+L 3556 0 
+L 1250 3572 
+Q 1163 3706 1106 3853 
+L 1088 3853 
+Q 1113 3709 1113 3238 
+L 1113 0 
+L 588 0 
+L 588 4481 
+L 1269 4481 
+L 3513 966 
+Q 3653 747 3694 666 
+L 3706 666 
+Q 3675 859 3675 1325 
+L 3675 4481 
+L 4200 4481 
+L 4200 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-54" d="M 3238 4006 
+L 1944 4006 
+L 1944 0 
+L 1419 0 
+L 1419 4006 
+L 128 4006 
+L 128 4481 
+L 3238 4481 
+L 3238 4006 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-71" d="M 3250 -1472 
+L 2738 -1472 
+L 2738 550 
+L 2725 550 
+Q 2391 -75 1631 -75 
+Q 1028 -75 664 354 
+Q 300 784 300 1525 
+Q 300 2322 700 2798 
+Q 1100 3275 1775 3275 
+Q 2431 3275 2725 2756 
+L 2738 2756 
+L 2738 3200 
+L 3250 3200 
+L 3250 -1472 
+z
+M 2738 1441 
+L 2738 1906 
+Q 2738 2300 2480 2572 
+Q 2222 2844 1825 2844 
+Q 1363 2844 1094 2501 
+Q 825 2159 825 1538 
+Q 825 984 1084 670 
+Q 1344 356 1753 356 
+Q 2203 356 2470 664 
+Q 2738 972 2738 1441 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-7a" d="M 2750 3053 
+L 856 438 
+L 2731 438 
+L 2731 0 
+L 103 0 
+L 103 159 
+L 1997 2763 
+L 281 2763 
+L 281 3200 
+L 2750 3200 
+L 2750 3053 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-64" d="M 3250 0 
+L 2738 0 
+L 2738 544 
+L 2725 544 
+Q 2369 -75 1625 -75 
+Q 1022 -75 661 354 
+Q 300 784 300 1525 
+Q 300 2319 700 2797 
+Q 1100 3275 1766 3275 
+Q 2425 3275 2725 2756 
+L 2738 2756 
+L 2738 4738 
+L 3250 4738 
+L 3250 0 
+z
+M 2738 1447 
+L 2738 1919 
+Q 2738 2306 2481 2575 
+Q 2225 2844 1831 2844 
+Q 1363 2844 1094 2500 
+Q 825 2156 825 1550 
+Q 825 997 1083 676 
+Q 1341 356 1775 356 
+Q 2203 356 2470 665 
+Q 2738 975 2738 1447 
+z
+" transform="scale(0.015625)"/>
+      <path id="SegoeUIEmoji-4c" d="M 2913 0 
+L 588 0 
+L 588 4481 
+L 1113 4481 
+L 1113 475 
+L 2913 475 
+L 2913 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#SegoeUIEmoji-45"/>
+     <use xlink:href="#SegoeUIEmoji-76" x="50.585938"/>
+     <use xlink:href="#SegoeUIEmoji-61" x="96.736328"/>
+     <use xlink:href="#SegoeUIEmoji-6c" x="147.615234"/>
+     <use xlink:href="#SegoeUIEmoji-75" x="171.833984"/>
+     <use xlink:href="#SegoeUIEmoji-61" x="228.425781"/>
+     <use xlink:href="#SegoeUIEmoji-74" x="279.304688"/>
+     <use xlink:href="#SegoeUIEmoji-69" x="313.191406"/>
+     <use xlink:href="#SegoeUIEmoji-6f" x="337.410156"/>
+     <use xlink:href="#SegoeUIEmoji-6e" x="396.003906"/>
+     <use xlink:href="#SegoeUIEmoji-20" x="452.595703"/>
+     <use xlink:href="#SegoeUIEmoji-6d" x="479.988281"/>
+     <use xlink:href="#SegoeUIEmoji-65" x="566.121094"/>
+     <use xlink:href="#SegoeUIEmoji-74" x="618.416016"/>
+     <use xlink:href="#SegoeUIEmoji-72" x="652.302734"/>
+     <use xlink:href="#SegoeUIEmoji-69" x="687.068359"/>
+     <use xlink:href="#SegoeUIEmoji-63" x="711.287109"/>
+     <use xlink:href="#SegoeUIEmoji-73" x="757.478516"/>
+     <use xlink:href="#SegoeUIEmoji-20" x="799.910156"/>
+     <use xlink:href="#SegoeUIEmoji-2d" x="827.302734"/>
+     <use xlink:href="#SegoeUIEmoji-20" x="867.292969"/>
+     <use xlink:href="#SegoeUIEmoji-49" x="894.685547"/>
+     <use xlink:href="#SegoeUIEmoji-4e" x="921.296875"/>
+     <use xlink:href="#SegoeUIEmoji-54" x="996.101562"/>
+     <use xlink:href="#SegoeUIEmoji-38" x="1048.494141"/>
+     <use xlink:href="#SegoeUIEmoji-2d" x="1102.400391"/>
+     <use xlink:href="#SegoeUIEmoji-71" x="1142.390625"/>
+     <use xlink:href="#SegoeUIEmoji-75" x="1201.277344"/>
+     <use xlink:href="#SegoeUIEmoji-61" x="1257.869141"/>
+     <use xlink:href="#SegoeUIEmoji-6e" x="1308.748047"/>
+     <use xlink:href="#SegoeUIEmoji-74" x="1365.339844"/>
+     <use xlink:href="#SegoeUIEmoji-69" x="1399.226562"/>
+     <use xlink:href="#SegoeUIEmoji-7a" x="1423.445312"/>
+     <use xlink:href="#SegoeUIEmoji-65" x="1468.660156"/>
+     <use xlink:href="#SegoeUIEmoji-64" x="1520.955078"/>
+     <use xlink:href="#SegoeUIEmoji-20" x="1579.841797"/>
+     <use xlink:href="#SegoeUIEmoji-4c" x="1607.234375"/>
+     <use xlink:href="#SegoeUIEmoji-53" x="1654.304688"/>
+     <use xlink:href="#SegoeUIEmoji-54" x="1707.429688"/>
+     <use xlink:href="#SegoeUIEmoji-4d" x="1759.822266"/>
+     <use xlink:href="#SegoeUIEmoji-20" x="1849.617188"/>
+     <use xlink:href="#SegoeUIEmoji-6d" x="1877.009766"/>
+     <use xlink:href="#SegoeUIEmoji-6f" x="1963.142578"/>
+     <use xlink:href="#SegoeUIEmoji-64" x="2021.736328"/>
+     <use xlink:href="#SegoeUIEmoji-65" x="2080.623047"/>
+     <use xlink:href="#SegoeUIEmoji-6c" x="2132.917969"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pcdc04ca26f">
+   <rect x="40.853125" y="22.08375" width="520.9" height="306.68"/>
+  </clipPath>
+ </defs>
+</svg>

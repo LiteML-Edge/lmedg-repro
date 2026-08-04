@@ -1,0 +1,10 @@
+usage: make_dirs_tree.py [-h] --root ROOT --plan PLAN [--dry-run] [--verbose]
+
+Create a DIRECTORY TREE from a simple .txt plan
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  Root directory where the tree will be created
+  --plan PLAN  Text file containing the directory list/tree
+  --dry-run    Create nothing; only show what would be created
+  --verbose    Print each processed directory

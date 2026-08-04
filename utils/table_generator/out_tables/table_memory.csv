@@ -1,0 +1,7 @@
+Model,Hardware,Model flash (kB),Tensor arena (kB),Min free heap Replay (kB),Min free heap Field (kB),Replay flash (kB),Field flash (kB),Replay arena (kB),Field arena (kB),Memory consistency,Replay log,Field log
+MLP,WEMOS LOLIN32,6.46,0.91,238.7,239.0,6.46,6.46,0.91,0.91,MATCH,device-monitor-260725-090646.log,device-monitor-260725-123210.log
+MLP,NUCLEO-F411RE,6.46,0.89,102.2,103.3,6.46,6.46,0.89,0.89,MATCH,device-monitor-260727-170448.log,device-monitor-260727-205824.log
+LSTM,WEMOS LOLIN32,9.46,3.42,238.7,239.3,9.46,9.46,3.42,3.42,MATCH,device-monitor-260725-100758.log,device-monitor-260725-142952.log
+LSTM,NUCLEO-F411RE,9.46,3.41,102.2,103.3,9.46,9.46,3.41,3.41,MATCH,device-monitor-260727-180657.log,device-monitor-260728-070726.log
+Conv1D Tiny,WEMOS LOLIN32,7.12,2.59,238.7,239.0,7.12,7.12,2.59,2.59,MATCH,device-monitor-260725-111032.log,device-monitor-260725-152233.log
+Conv1D Tiny,NUCLEO-F411RE,7.12,2.56,102.2,103.3,7.12,7.12,2.56,2.56,MATCH,device-monitor-260727-185942.log,device-monitor-260727-233942.log

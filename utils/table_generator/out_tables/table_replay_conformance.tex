@@ -1,0 +1,48 @@
+\newlength{\equivwidth}
+\setlength{\equivwidth}{0.98\columnwidth}
+
+\begin{table}[!t]
+\centering
+\caption{Replay stage-wise conformance on both targets under Rolling-24 ($n{=}24$ for each model--target pair).}
+\label{tab:equiv}
+\scriptsize
+\setlength{\tabcolsep}{1.8pt}
+\renewcommand{\arraystretch}{1.15}
+\renewcommand{\tabularxcolumn}[1]{>{\centering\arraybackslash}m{#1}}
+
+\newcommand{\theadfit}[1]{{\fontsize{6.0}{6.5}\selectfont\bfseries #1}}
+\newcommand{\hdrstrut}{\rule{0pt}{2.6ex}}
+\newcommand{\hcellone}[1]{\makecell[c]{\hdrstrut\theadfit{#1}}}
+\newcommand{\hcelltwo}[2]{\makecell[c]{\hdrstrut\theadfit{#1}\\\theadfit{#2}}}
+\newcommand{\hcellthree}[3]{\makecell[c]{\hdrstrut\theadfit{#1}\\\theadfit{#2}\\{\fontsize{5.4}{5.9}\selectfont\bfseries #3}}}
+
+\begin{tabularx}{\equivwidth}{
+>{\centering\arraybackslash}m{1.05cm}
+X X X X X X X}
+\toprule
+\midrule
+\hcellone{Model} &
+\hcelltwo{Shared}{pipe.} &
+\hcellthree{Crit.}{input}{$(x^*,p^*)$} &
+\hcelltwo{Raw}{dump} &
+\hcelltwo{Dec.}{$o_{\mathrm{raw}}$} &
+\hcelltwo{Post.}{$y^*$} &
+\hcelltwo{Pred.}{(T/H)} &
+\hcelltwo{Metric}{checks} \\
+\midrule
+MLP &
+$\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ &
+\makecell[c]{T\,24/24\\H\,24/24} & 8/9 \\
+LSTM &
+$\checkmark$ & $\checkmark$ & $\times$ & $\times$ & $\times$ &
+\makecell[c]{T\,21/24\\H\,23/24} & 1/9 \\
+\makecell[c]{Conv1D\\Tiny} &
+$\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ &
+\makecell[c]{T\,24/24\\H\,24/24} & 9/9 \\
+\midrule
+\bottomrule
+\end{tabularx}
+
+\vspace{1pt}
+\footnotesize $\checkmark$ = MATCH; $\times$ = MISMATCH.
+\end{table}

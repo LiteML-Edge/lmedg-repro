@@ -1,0 +1,9 @@
+[
+  {
+    "copied_at": "20260412-173215",
+    "run": "run.v001",
+    "src": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\trainings\\environment_lstm\\scalers_exporter\\run.v001\\scalers_exported_lstm.h",
+    "dst": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_lstm\\PlatfIO_ESP32_Wemos_lstm\\include\\scalers_exported_lstm.h",
+    "snapshot": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_lstm\\PlatfIO_ESP32_Wemos_lstm\\include\\_versions\\scalers_exported_lstm\\scalers_exported_lstm.20260412-173215.h"
+  }
+]

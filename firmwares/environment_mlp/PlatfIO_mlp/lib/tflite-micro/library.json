@@ -1,0 +1,30 @@
+{
+  "name": "tflite-micro",
+  "version": "2.14.0",
+  "build": {
+    "includeDir": "tensorflow",
+    "srcFilter": [
+      "+<tensorflow/lite/micro/*.cc>",
+      "+<tensorflow/lite/micro/arena_allocator/*.cc>",
+      "+<tensorflow/lite/micro/memory_planner/*.cc>",
+      "+<tensorflow/lite/micro/tflite_bridge/*.cc>",
+      
+      "+<tensorflow/lite/micro/kernels/*.cc>",
+      "+<tensorflow/lite/kernels/*.cc>",
+      "+<tensorflow/lite/kernels/internal/*.cc>",
+      
+      "+<tensorflow/lite/core/api/*.cc>",
+      "+<tensorflow/lite/core/c/common.cc>",
+      "+<tensorflow/lite/schema/schema_utils.cc>",
+
+      "-<**/*_test.cc>",
+      "-<**/*.test.cc>",
+      "-<**/tests/**>",
+      "-<**/testing/**>",
+      "-<**/benchmarks/**>",
+      "-<**/examples/**>",
+      "-<**/python/**>",
+      "-<**/tools/**>"
+    ]
+  }
+}

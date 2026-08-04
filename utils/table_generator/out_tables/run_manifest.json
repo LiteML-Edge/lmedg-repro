@@ -1,0 +1,42 @@
+{
+  "repo_root": ".",
+  "models_found": [
+    "MLP",
+    "LSTM",
+    "Conv1D Tiny"
+  ],
+  "hardware_found": [
+    "WEMOS LOLIN32",
+    "NUCLEO-F411RE"
+  ],
+  "classification_rule": "model, hardware, and mode are detected from log contents; filenames are ignored; prediction and model-I/O workbooks are independently selected for each hardware target from directory or filename tokens",
+  "default_workbook_dirs": {
+    "MLP": "utils/workbook_mlp",
+    "LSTM": "utils/workbook_lstm",
+    "Conv1D Tiny": "utils/workbook_Conv1D_Tiny"
+  },
+  "default_log_dirs": {
+    "MLP": [
+      "firmwares/environment_mlp/PlatfIO_mlp/logs"
+    ],
+    "LSTM": [
+      "firmwares/environment_lstm/PlatfIO_lstm/logs"
+    ],
+    "Conv1D Tiny": [
+      "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs"
+    ]
+  },
+  "outputs": [
+    "paper_model_sources.csv",
+    "log_classification_inventory.csv",
+    "table_replay_conformance.csv",
+    "table_infer_energy.csv",
+    "table_memory.csv",
+    "table_idle.csv",
+    "liteml_edge_paper_tables.xlsx",
+    "table_replay_conformance.tex",
+    "table_infer_energy.tex",
+    "table_memory.tex",
+    "table_idle.tex"
+  ]
+}

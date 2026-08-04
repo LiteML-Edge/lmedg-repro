@@ -1,0 +1,78 @@
+steps:
+  - name: preprocess
+    script: datasets/environment_Conv1D_Tiny/environment_dataset_Conv1D_Tiny.py
+    #args: ["--input", "data/raw", "--output", "data/clean"]
+    env:
+      PYTHONPATH: "."
+    cwd: null
+
+  - name: base_training
+    script: trainings/environment_Conv1D_Tiny/base_model/environment_base_model_Conv1D_Tiny.py
+    #args: ["--epochs", "3", "--data", "data/clean", "--out", "artifacts/model.txt"]
+    depends_on: ["preprocess"]
+  
+  - name: prune_optimizing
+    script: trainings/environment_Conv1D_Tiny/pruned_model/environment_pruned_model_Conv1D_Tiny.py
+    #args: []
+    depends_on: ["base_training"]
+    continue_on_error: false
+
+  - name: quantize_optimizing
+    script: trainings/environment_Conv1D_Tiny/quantized_model/environment_quantized_model_Conv1D_Tiny.py
+    #args: []
+    depends_on: ["prune_optimizing"]
+    continue_on_error: false
+
+  - name: header_generator
+    script: trainings/environment_Conv1D_Tiny/header_generator/header_generator_Conv1D_Tiny.py
+    #args: []
+    depends_on: ["quantize_optimizing"]
+    continue_on_error: false
+
+  - name: pio_pull_model
+    script: utils/global_utils/pio_pull_headers.py
+    args: [--project-dir, "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny", --selector, "latest", --header-source, "environment_model_data_Conv1D_Tiny.h", --header-dst, "environment_model_data_Conv1D_Tiny.h", --versioning, "1", --runs-base, "trainings/environment_Conv1D_Tiny/header_generator"]
+    depends_on: ["header_generator"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null  
+  
+  - name: scalers_exporter
+    script: trainings/environment_Conv1D_Tiny/scalers_exporter/scale_vector_exporter_Conv1D_Tiny.py
+    #args: []
+    depends_on: ["pio_pull_model"]
+    continue_on_error: false
+
+  - name: pio_pull_scalers
+    script: utils/global_utils/pio_pull_headers.py
+    args: [--project-dir, "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny", --selector, "latest", --header-source, "scalers_exported_Conv1D_Tiny.h", --header-dst, "scalers_exported_Conv1D_Tiny.h", --versioning, "1", --runs-base, "trainings/environment_Conv1D_Tiny/scalers_exporter"]
+    depends_on: ["scalers_exporter"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null  
+     
+  - name: pio_pull_rolling24
+    script: utils/global_utils/pio_pull_headers.py
+    args: [--project-dir, "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny", --selector, "latest", --header-source, "environment_quantized_samples_replay_raw_2plus47_Conv1D_Tiny.h", --header-dst, "environment_quantized_samples_replay_raw_2plus47_Conv1D_Tiny.h", --versioning, "1", --runs-base, 'metrics\environment_Conv1D_Tiny\quantized_model']
+    depends_on: ["scalers_exporter"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null 
+
+  - name: pio_build
+    script: utils/global_utils/pio_build.py
+    args: ["--project-dir", "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny", "--selector", "latest", "--extra", "-e", "lolin32_Conv1D_Tiny", "--disable-auto-clean"]
+    depends_on: ["pio_pull_scalers", "pio_pull_rolling24"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null
+
+  - name: pio_upload
+    script: utils/global_utils/pio_upload.py
+    args: ["--project-dir", "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny", "--selector", "latest", "--extra", "-e", "lolin32_Conv1D_Tiny", "--disable-auto-clean"]
+    depends_on: ["pio_build"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null
+
+  - name: pio_monitor
+    script: utils/global_utils/pio_monitor.py
+    args: ["--project-dir", "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny", "--wait", "20"]
+    depends_on: ["pio_upload"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null

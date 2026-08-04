@@ -1,0 +1,66 @@
+{
+  "run": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\trainings\\environment_lstm\\scalers_exporter\\run",
+  "source": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\trainings\\environment_lstm\\base_model\\run",
+  "features": [
+    "T_out",
+    "H_out",
+    "T_in_lag1",
+    "H_in_lag1",
+    "T_out_lag1",
+    "H_out_lag1",
+    "T_in_lag2",
+    "H_in_lag2",
+    "sin_hour",
+    "cos_hour",
+    "weekday",
+    "month"
+  ],
+  "targets": [
+    "T_in",
+    "H_in"
+  ],
+  "X_MIN": [
+    21.110001,
+    43.0,
+    24.360001,
+    60.620712,
+    21.110001,
+    43.0,
+    24.360001,
+    60.620712,
+    -1.0,
+    -1.0,
+    0.0,
+    1.0
+  ],
+  "X_MAX": [
+    35.0,
+    100.0,
+    28.68,
+    75.301254,
+    35.0,
+    100.0,
+    28.68,
+    75.301254,
+    1.0,
+    1.0,
+    6.0,
+    12.0
+  ],
+  "X_FEATURE_RANGE": [
+    0.0,
+    1.0
+  ],
+  "DY_MIN": [
+    -1.11,
+    -0.747992
+  ],
+  "DY_MAX": [
+    0.91,
+    0.649111
+  ],
+  "Y_FEATURE_RANGE": [
+    0.0,
+    1.0
+  ]
+}

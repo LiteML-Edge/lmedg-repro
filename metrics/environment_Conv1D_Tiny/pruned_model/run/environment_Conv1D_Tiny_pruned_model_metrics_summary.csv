@@ -1,0 +1,47 @@
+﻿Pruned Model Metrics,Value,Status,Meaning
+MSE (normalized residual joint),0.0155,,"Mean squared error on the normalized scale, aggregated over the residuals ΔT_in and ΔH_in."
+RMSE (normalized residual joint),0.1244,,Root mean squared error on the normalized scale.
+MAE (normalized residual joint),0.0869,,Mean absolute error on the normalized scale.
+R² (normalized residual joint),-0.0114,,Coefficient of determination on the normalized scale.
+MSE (original joint),0.0384, MSE within threshold,"Mean squared error on the original scale (°C / %RH), joint over [T_in, H_in]."
+RMSE (original joint),0.1960, RMSE within threshold,Root mean squared error on the original scale — joint.
+MAE (original joint),0.1405, MAE within threshold,Mean absolute error on the original scale — joint.
+R² (original joint),0.9781, R² within threshold,Coefficient of determination on the original scale — joint.
+MSE_T (T_in),0.0315,,Mean squared error on the original scale for T_in.
+RMSE_T (T_in),0.1774,,Root mean squared error on the original scale for T_in.
+MAE_T (T_in),0.1232,,Mean absolute error on the original scale for T_in.
+R²_T (T_in),0.9651,,Coefficient of determination on the original scale for T_in.
+MSE_H (H_in),0.0454,,Mean squared error on the original scale for H_in.
+RMSE_H (H_in),0.2130,,Root mean squared error on the original scale for H_in.
+MAE_H (H_in),0.1577,,Mean absolute error on the original scale for H_in.
+R²_H (H_in),0.9911,,Coefficient of determination on the original scale for H_in.
+"N_ALL (rolling24 firmware, last window)",24,,Rolling(24): number of samples (HOUR events) effectively present in the final window.
+"MAE (rolling24 firmware, last window)",0.1608,,Rolling(24) aggregate (T+H) in the LAST window — comparable to the firmware log.
+"RMSE (rolling24 firmware, last window)",0.2165,,Rolling(24) aggregate (T+H) in the LAST window — comparable to the firmware log.
+"R² (rolling24 firmware, last window)",0.9087,,Rolling(24) aggregate (T+H) in the LAST window — comparable to the firmware log.
+"MAE_T (rolling24 firmware, last window)",0.0841,,Rolling(24) T_in in the LAST window — comparable to the firmware log.
+"RMSE_T (rolling24 firmware, last window)",0.1040,,Rolling(24) T_in in the LAST window — comparable to the firmware log.
+"R²_T (rolling24 firmware, last window)",0.8401,,Rolling(24) T_in in the LAST window — comparable to the firmware log.
+"MAE_H (rolling24 firmware, last window)",0.2375,,Rolling(24) H_in in the LAST window — comparable to the firmware log.
+"RMSE_H (rolling24 firmware, last window)",0.2880,,Rolling(24) H_in in the LAST window — comparable to the firmware log.
+"R²_H (rolling24 firmware, last window)",0.9772,,Rolling(24) H_in in the LAST window — comparable to the firmware log.
+"MAE (rolling24 firmware, test mean)",0.1405,,Rolling(24) aggregate (T+H) — MEAN across all test windows.
+"RMSE (rolling24 firmware, test mean)",0.1880,,Rolling(24) aggregate (T+H) — MEAN across all test windows.
+"R² (rolling24 firmware, test mean)",0.6471,,Rolling(24) aggregate (T+H) — MEAN across all test windows.
+"MAE_T (rolling24 firmware, test mean)",0.1236,,Rolling(24) T_in — MEAN across all test windows.
+"RMSE_T (rolling24 firmware, test mean)",0.1706,,Rolling(24) T_in — MEAN across all test windows.
+"R²_T (rolling24 firmware, test mean)",0.4366,,Rolling(24) T_in — MEAN across all test windows.
+"MAE_H (rolling24 firmware, test mean)",0.1573,,Rolling(24) H_in — MEAN across all test windows.
+"RMSE_H (rolling24 firmware, test mean)",0.1981,,Rolling(24) H_in — MEAN across all test windows.
+"R²_H (rolling24 firmware, test mean)",0.8577,,Rolling(24) H_in — MEAN across all test windows.
+Sparsity before strip (%),3.57 %,,Percentage of weights equal to zero before removing pruning wrappers.
+Sparsity after strip (%),1.88 %,,Percentage of weights equal to zero after removing pruning wrappers.
+Model size (KB),51.57 KB,,Size of the model file saved on disk (KB).
+Mean Training Loss,0.02525630,,Mean training loss over the last epochs (fit diagnosis).
+Mean Validation Loss,0.02427102,,Mean validation loss over the last epochs (fit diagnosis).
+Absolute Gap,0.00098529,,Absolute difference between mean losses (val - train).
+Gap Percentage (%),3.90 %,,Percentage difference between mean losses (val - train) / train.
+Total Inference Time (ms),277.71 ms,,Total time to infer the full test set (ms).
+Inference Time per Sample (ms),0.14 ms,,Average latency per sample in the test set (ms).
+Fit Status,,Well-fitted model  (gap < 10%),Diagnosis based on the training vs validation loss gap.
+Model Status,,Performance thresholds satisfied ,Overall status (aggregated metrics on the original scale).

@@ -1,0 +1,6 @@
+adafruit/Adafruit INA219 @ ^1.2.3
+bblanchon/ArduinoJson @ ^7.0.0
+ESP32Async/ESPAsyncWebServer @ ^3.7.10
+thingpulse/ESP8266 and ESP32 OLED driver for SSD1306 displays@^4.4.0
+knolleary/PubSubClient @ ^2.8
+ESP32Async/AsyncTCP @ ^3.4.7

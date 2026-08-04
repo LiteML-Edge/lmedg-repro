@@ -1,0 +1,13 @@
+Expected model,Detected model,Hardware,Mode,Log file,Log path,Classification
+MLP,MLP,WEMOS LOLIN32,Replay,device-monitor-260725-090646.log,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260725-090646.log,selected
+MLP,MLP,WEMOS LOLIN32,Field,device-monitor-260725-123210.log,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260725-123210.log,selected
+MLP,MLP,NUCLEO-F411RE,Replay,device-monitor-260727-170448.log,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260727-170448.log,selected
+MLP,MLP,NUCLEO-F411RE,Field,device-monitor-260727-205824.log,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260727-205824.log,selected
+LSTM,LSTM,WEMOS LOLIN32,Replay,device-monitor-260725-100758.log,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260725-100758.log,selected
+LSTM,LSTM,WEMOS LOLIN32,Field,device-monitor-260725-142952.log,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260725-142952.log,selected
+LSTM,LSTM,NUCLEO-F411RE,Replay,device-monitor-260727-180657.log,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260727-180657.log,selected
+LSTM,LSTM,NUCLEO-F411RE,Field,device-monitor-260728-070726.log,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260728-070726.log,selected
+Conv1D Tiny,Conv1D Tiny,WEMOS LOLIN32,Replay,device-monitor-260725-111032.log,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260725-111032.log,selected
+Conv1D Tiny,Conv1D Tiny,WEMOS LOLIN32,Field,device-monitor-260725-152233.log,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260725-152233.log,selected
+Conv1D Tiny,Conv1D Tiny,NUCLEO-F411RE,Replay,device-monitor-260727-185942.log,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260727-185942.log,selected
+Conv1D Tiny,Conv1D Tiny,NUCLEO-F411RE,Field,device-monitor-260727-233942.log,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260727-233942.log,selected

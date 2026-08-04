@@ -1,0 +1,16 @@
+RETURN=0
+STDOUT:
+usage: generate_liteml_edge_paper_tables.py [-h] [--repo-root REPO_ROOT]
+                                            [--output-dir OUTPUT_DIR]
+
+Generate LiteML-Edge paper tables from default workbook and log directories.
+
+options:
+  -h, --help            show this help message and exit
+  --repo-root REPO_ROOT
+                        LiteML repository root. When omitted, the script
+                        infers it from its own location.
+  --output-dir OUTPUT_DIR
+                        Directory where generated files will be written.
+
+STDERR:

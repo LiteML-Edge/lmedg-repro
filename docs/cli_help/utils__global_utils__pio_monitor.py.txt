@@ -1,0 +1,9 @@
+
+Usage examples:
+  python pio_monitor.py                    # Default monitor with TXT logging
+  python pio_monitor.py --no-log           # Monitor without file logging
+  python pio_monitor.py --port COM5 --baud 9600
+  python pio_monitor.py -e esp32dev        # Use the environment from platformio.ini
+  python pio_monitor.py --wait 20          # Wait 20 seconds for the port to appear
+  python pio_monitor.py --extra --eol CRLF --echo
+  python pio_monitor.py -d firmwares -e esp32dev --port COM4 --baud 9600 --wait 10 --extra --raw --filter default

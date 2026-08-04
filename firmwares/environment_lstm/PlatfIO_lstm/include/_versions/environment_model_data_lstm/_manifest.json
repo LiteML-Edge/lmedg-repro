@@ -1,0 +1,9 @@
+[
+  {
+    "copied_at": "20260412-172140",
+    "run": "run.v001",
+    "src": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\trainings\\environment_lstm\\header_generator\\run.v001\\environment_model_data_lstm.h",
+    "dst": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_lstm\\PlatfIO_ESP32_Wemos_lstm\\include\\environment_model_data_lstm.h",
+    "snapshot": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_lstm\\PlatfIO_ESP32_Wemos_lstm\\include\\_versions\\environment_model_data_lstm\\environment_model_data_lstm.20260412-172140.h"
+  }
+]

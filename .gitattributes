@@ -1,0 +1,36 @@
+* text=auto
+
+*.py             text eol=lf
+*.md             text eol=lf
+*.txt            text eol=lf
+*.csv            text eol=lf
+*.json           text eol=lf
+*.yaml           text eol=lf
+*.yml            text eol=lf
+*.tex            text eol=lf
+*.sh             text eol=lf
+*.cpp            text eol=lf
+*.c              text eol=lf
+*.h              text eol=lf
+*.hpp            text eol=lf
+*.ino            text eol=lf
+*.ini            text eol=lf
+*.code-workspace text eol=lf
+
+*.bat            text eol=crlf
+*.cmd            text eol=crlf
+*.ps1            text eol=crlf
+
+*.png            binary
+*.jpg            binary
+*.jpeg           binary
+*.gif            binary
+*.pdf            binary
+*.zip            binary
+*.xlsx           binary
+*.xls            binary
+*.tflite         binary
+*.bin            binary
+*.elf            binary
+*.a              binary
+*.o              binary

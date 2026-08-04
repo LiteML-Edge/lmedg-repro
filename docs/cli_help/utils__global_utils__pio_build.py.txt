@@ -1,0 +1,10 @@
+usage: pio_build.py [-h] [--project-dir PROJECT_DIR] [--selector SELECTOR]
+                    [--extra ...]
+
+PlatformIO build through the runner
+
+options:
+  -h, --help            show this help message and exit
+  --project-dir PROJECT_DIR
+  --selector SELECTOR
+  --extra ...           extra arguments for platformio run

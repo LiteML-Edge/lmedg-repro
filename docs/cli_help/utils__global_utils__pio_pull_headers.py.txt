@@ -1,0 +1,31 @@
+usage: pio_pull_headers.py [-h] [--project-dir PROJECT_DIR]
+                           [--runs-base RUNS_BASE] [--selector SELECTOR]
+                           [--header-sources HEADER_SOURCES]
+                           [--header-dsts HEADER_DSTS] [--dst-dir DST_DIR]
+                           [--header-source HEADER_SOURCE]
+                           [--header-dst HEADER_DST] [--versioning VERSIONING]
+
+Copy .h headers into include/ and save per-folder snapshots (CLI or PlatformIO
+pre-script)
+
+options:
+  -h, --help            show this help message and exit
+  --project-dir, -d PROJECT_DIR
+                        PlatformIO project root containing include/
+  --runs-base RUNS_BASE
+                        Run base (repository-relative paths are accepted).
+                        Example: trainings/.../header_generator ou .../run
+  --selector SELECTOR   latest | vNNN | tsYYYY... | path | -N
+  --header-sources HEADER_SOURCES
+                        Source list separated by , or ; (example: 'model.h,
+                        include/*.h')
+  --header-dsts HEADER_DSTS
+                        1-to-1 list of destinations relative to include/
+  --dst-dir DST_DIR     Subfolder under include/ for all files (example:
+                        'models')
+  --header-source HEADER_SOURCE
+                        One source header relative to the run
+  --header-dst HEADER_DST
+                        One destination under include/
+  --versioning VERSIONING
+                        1|0 enables/disables snapshots

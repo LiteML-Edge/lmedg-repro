@@ -1,0 +1,11 @@
+usage: pio_upload.py [-h] [--project-dir PROJECT_DIR] [--selector SELECTOR]
+                     [--port PORT] [--extra ...]
+
+PlatformIO upload through the runner
+
+options:
+  -h, --help            show this help message and exit
+  --project-dir PROJECT_DIR
+  --selector SELECTOR
+  --port PORT           serial port (for example, COM6)
+  --extra ...           extra arguments

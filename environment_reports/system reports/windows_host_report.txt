@@ -1,0 +1,32 @@
+﻿LiteML-Edge — Host System Report
+Generated: 2026-08-02 09:38:31
+
+OPERATING SYSTEM
+
+
+Caption        : Microsoft Windows 11 Home Single Language
+Version        : 10.0.26100
+BuildNumber    : 26100
+OSArchitecture : 64 bits
+
+
+
+
+PROCESSOR
+
+
+Name                      : Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+NumberOfCores             : 2
+NumberOfLogicalProcessors : 4
+
+
+
+
+MEMORY
+
+
+TotalPhysicalMemory_GB : 19,88
+
+
+
+

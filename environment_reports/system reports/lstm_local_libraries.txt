@@ -1,0 +1,16 @@
+﻿LiteML-Edge — Local Libraries Report
+Project: LSTM firmware
+Project path: firmwares\environment_lstm\PlatfIO_lstm
+Library directory: firmwares\environment_lstm\PlatfIO_lstm\lib
+Generated: 2026-08-02 09:34:33
+Library count: 4
+
+Library                 Version      Manifest           Files Size_MB RelativePath               
+-------                 -------      --------           ----- ------- ------------               
+Adafruit Unified Sensor 1.1.15       library.properties     8   0,041 lib\Adafruit Unified Sensor
+DHT sensor library      1.4.7        library.properties    19   0,047 lib\DHT sensor library     
+flatbuffers             Not declared None                  32   0,427 lib\flatbuffers            
+tflite-micro            2.14.0       library.json         453   4,834 lib\tflite-micro           
+
+
+

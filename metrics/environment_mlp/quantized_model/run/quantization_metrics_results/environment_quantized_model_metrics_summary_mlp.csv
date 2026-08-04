@@ -1,0 +1,48 @@
+﻿Quantized Model Metrics,Value,Status,Meaning,Expected Values / Thresholds
+"MSE (normalized residual, joint)",0.0152,,"Mean squared error in the normalized scale for residual targets (ΔT_in, ΔH_in), jointly evaluated.",→ Lower is better.
+"RMSE (normalized residual, joint)",0.1231,,"Root mean squared error in the normalized scale, jointly evaluated.",→ Lower is better.
+"MAE (normalized residual, joint)",0.0908,,"Mean absolute error in the normalized scale, jointly evaluated.",→ Lower is better.
+"R² (normalized residual, joint)",-0.0528,,"Coefficient of determination in the normalized scale, jointly evaluated.",→ Ideally > 0.95.
+MSE (joint original),0.0391,MSE within threshold,"Mean squared error in the original physical scale (°C / %RH) for the joint target set [T_in, H_in].","→ < 0.1 is excellent, depending on the problem."
+RMSE (joint original),0.1978,RMSE within threshold,Root mean squared error in the original physical scale for the joint target set.,→ < 0.32 as a reference threshold.
+MAE (joint original),0.1485,MAE within threshold,Mean absolute error in the original physical scale for the joint target set.,→ < 0.3 as a reference threshold.
+R² (joint original),0.9757,R² within threshold,Coefficient of determination in the original physical scale for the joint target set.,→ > 0.8 is desirable.
+MSE_T (T_in),0.0365,,Mean squared error in the original physical scale for T_in.,→ Lower is better (T_in).
+RMSE_T (T_in),0.1911,,Root mean squared error in the original physical scale for T_in.,→ Lower is better (T_in).
+MAE_T (T_in),0.1405,,Mean absolute error in the original physical scale for T_in.,→ Lower is better (T_in).
+R²_T (T_in),0.9595,,Coefficient of determination in the original physical scale for T_in.,→ Ideally > 0.8 (T_in).
+MSE_H (H_in),0.0417,,Mean squared error in the original physical scale for H_in.,→ Lower is better (H_in).
+RMSE_H (H_in),0.2042,,Root mean squared error in the original physical scale for H_in.,→ Lower is better (H_in).
+MAE_H (H_in),0.1565,,Mean absolute error in the original physical scale for H_in.,→ Lower is better (H_in).
+R²_H (H_in),0.9919,,Coefficient of determination in the original physical scale for H_in.,→ Ideally > 0.8 (H_in).
+"N_ALL (rolling24 firmware, last window)",24,,Rolling(24): number of effective HOUR-event samples in the final window.,→ Must reach 24 when the rolling window is fully populated.
+"MAE (rolling24 firmware, last window)",0.1384,,"Aggregated Rolling(24) MAE in the LAST window, directly comparable with the firmware log.",→ Lower is better (rolling24).
+"RMSE (rolling24 firmware, last window)",0.1655,,"Aggregated Rolling(24) RMSE in the LAST window, directly comparable with the firmware log.",→ Lower is better (rolling24).
+"R² (rolling24 firmware, last window)",0.8472,,"Aggregated Rolling(24) R² in the LAST window, directly comparable with the firmware log.","→ May be NaN under low-variance conditions, consistent with firmware behavior."
+"MAE_T (rolling24 firmware, last window)",0.1229,,"Rolling(24) T_in MAE in the LAST window, directly comparable with the firmware log.",→ Lower is better (rolling24 T_in).
+"RMSE_T (rolling24 firmware, last window)",0.1417,,"Rolling(24) T_in RMSE in the LAST window, directly comparable with the firmware log.",→ Lower is better (rolling24 T_in).
+"R²_T (rolling24 firmware, last window)",0.7038,,"Rolling(24) T_in R² in the LAST window, directly comparable with the firmware log.",→ May be NaN under low-variance conditions.
+"MAE_H (rolling24 firmware, last window)",0.1539,,"Rolling(24) H_in MAE in the LAST window, directly comparable with the firmware log.",→ Lower is better (rolling24 H_in).
+"RMSE_H (rolling24 firmware, last window)",0.1863,,"Rolling(24) H_in RMSE in the LAST window, directly comparable with the firmware log.",→ Lower is better (rolling24 H_in).
+"R²_H (rolling24 firmware, last window)",0.9905,,"Rolling(24) H_in R² in the LAST window, directly comparable with the firmware log.",→ May be NaN under low-variance conditions.
+"MAE (rolling24 firmware, test mean)",0.1489,,Mean aggregated Rolling(24) MAE across the full test set.,→ Lower is better (mean across windows).
+"RMSE (rolling24 firmware, test mean)",0.1914,,Mean aggregated Rolling(24) RMSE across the full test set.,→ Lower is better (mean across windows).
+"R² (rolling24 firmware, test mean)",0.5893,,Mean aggregated Rolling(24) R² across the full test set.,→ May be NaN under low-variance conditions.
+"MAE_T (rolling24 firmware, test mean)",0.1410,,Mean Rolling(24) MAE for T_in across the full test set.,→ Lower is better (mean across windows for T_in).
+"RMSE_T (rolling24 firmware, test mean)",0.1856,,Mean Rolling(24) RMSE for T_in across the full test set.,→ Lower is better (mean across windows for T_in).
+"R²_T (rolling24 firmware, test mean)",0.3224,,Mean Rolling(24) R² for T_in across the full test set.,→ May be NaN under low-variance conditions.
+"MAE_H (rolling24 firmware, test mean)",0.1567,,Mean Rolling(24) MAE for H_in across the full test set.,→ Lower is better (mean across windows for H_in).
+"RMSE_H (rolling24 firmware, test mean)",0.1911,,Mean Rolling(24) RMSE for H_in across the full test set.,→ Lower is better (mean across windows for H_in).
+"R²_H (rolling24 firmware, test mean)",0.8563,,Mean Rolling(24) R² for H_in across the full test set.,→ May be NaN under low-variance conditions.
+Sparsity before strip (%),46.63 %,,Percentage of zero-valued weights before applying strip_pruning.,"→ In general, > 50% supports meaningful compression gains."
+Sparsity after strip (%),46.63 %,,Percentage of zero-valued weights after removing pruning operations.,→ Ideally close to the target final sparsity.
+Model size (KB),6.46 KB,,Final model file size in kilobytes (KB).,→ Preferably < 256 KB on constrained MCUs.
+Original model size (KB),74.46 KB,,Original model file size (.keras) in kilobytes (KB).,→ Reference value for comparison with the quantized model.
+Mean training loss,0.0116,,Mean training loss over the last training epochs.,"→ Low value preferred (e.g., < 0.01)."
+Mean validation loss,0.0125,,Mean validation loss over the last validation epochs.,→ Should remain close to the training loss.
+Absolute gap,0.0009,,Absolute difference between mean losses.,→ < 0.05 is good.
+Percentage gap (%),7.76 %,,Percentage gap between validation and training losses.,→ < 10% is excellent.
+Total inference time (ms),400.13 ms,,Total time required to infer all test samples.,→ Lower is better.
+Inference time per sample (ms),0.20 ms,,Mean time required to infer one sample.,→ < 1 ms is ideal in TinyML scenarios.
+Fit status,,Well-fitted model (generalization gap < 10%),"Diagnosis based on the gap/loss pattern: fitted, overfitting, or underfitting.",→ 'Fitted' when the gap is low and losses are stable.
+Model status,,Performance thresholds satisfied,Overall diagnosis considering predefined MSE/RMSE/MAE/R² limits.,→ 'Performance thresholds satisfied' when the model satisfies the predefined limits.

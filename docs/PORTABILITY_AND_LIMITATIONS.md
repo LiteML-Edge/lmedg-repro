@@ -1,0 +1,10 @@
+# Portability and Limitations
+
+1. **Reference OS:** the recorded host environment is Microsoft Windows 11 with Python 3.10.0; exact details are in `environment_reports/`. Host-only comparison scripts also run on other operating systems when paths and dependencies are available.
+2. **Serial ports:** `COM6` and `COM8` are workstation-specific and must be adapted on another machine.
+3. **Hardware execution:** upload, DHT22 FIELD runs, and INA219 energy measurements require the physical boards and wiring.
+4. **Platform packages:** the PlatformIO project files declare `espressif32` and `ststm32`; PlatformIO installs missing platform/framework/toolchain packages on first build. The PlatformIO-managed library sources used in the validated firmware builds are preserved under `.pio/libdeps` to retain the tested dependency snapshot and reduce dependence on future online availability. PlatformIO platform, framework, and toolchain packages are still installed separately when required.
+5. **Historical run metadata:** some checked-in `latest.txt` and manifest fields contain absolute paths from the experiment workstation. They document provenance. A fresh sequential run updates the local pointers; frozen-evidence verification does not depend on those absolute paths.
+6. **Training variability:** deterministic seeds are configured, but low-level TensorFlow, compiler, CPU/GPU, and library differences can cause small training variations. The frozen `.keras`, `.tflite`, reference spreadsheets, headers, and device logs provide the exact retained artifacts.
+7. **REPLAY versus FIELD:** the formal 1:1 stage comparison uses REPLAY. FIELD logs provide deployment behavior and hardware-cost evidence but are not expected to reproduce the replay input sequence.
+8. **Dataset and window scope:** the packaged study uses one environmental dataset and a 24-step temporal policy. The framework structure is reusable, but the reported numerical results are scoped to this configuration. The complete manuscript-aligned interpretation is centralized in `docs/N24_SCOPE_NOTE.md`.

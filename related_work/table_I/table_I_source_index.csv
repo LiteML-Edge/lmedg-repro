@@ -1,0 +1,9 @@
+Ref_ID,Representative_Work,Full_Title,DOI,Source_Access_Note
+[5],MLonMCU,MLonMCU: TinyML Benchmarking with Fast Retargeting,10.1145/3615338.3618128,DOI listed; cited article not bundled in this package
+[6],MLino bench,MLino bench: A comprehensive benchmarking tool for evaluating ML models on edge devices,10.1016/j.sysarc.2024.103262,DOI listed; cited article not bundled in this package
+[7],Quantization and Deployment,Quantization and Deployment of Deep Neural Networks on Microcontrollers,10.3390/s21092984,DOI listed; cited article not bundled in this package
+[8],Robustifying Deployment,Robustifying the Deployment of tinyML Models for Autonomous Mini-Vehicles,10.3390/s21041339,DOI listed; cited article not bundled in this package
+[15],U-TOE,U-TOE: Universal TinyML On-board Evaluation,10.23919/PEMWN58813.2023.10304946,DOI listed; cited article not bundled in this package
+[16],Evaluation Methodology,An evaluation methodology to determine the actual limitations of a tinyML project,10.1016/j.iot.2023.100729,DOI listed; cited article not bundled in this package
+[18],EdgeMark,EdgeMark: An automation and benchmarking system for embedded artificial intelligence tools,10.1016/j.sysarc.2025.103488,DOI listed; cited article not bundled in this package
+[22],RIOT-ML,RIOT-ML: toolkit for over-the-air secure updates and performance evaluation of TinyML models,10.1007/s12243-024-01041-5,DOI listed; cited article not bundled in this package

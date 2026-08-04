@@ -1,0 +1,100 @@
+usage: runner.py [-h] [--pipeline PIPELINE] [--only ONLY [ONLY ...]]
+                 [--no-upstream] [--from FROM_STEP] [--to TO_STEP]
+                 [--after AFTER] [--before BEFORE] [--list] [--dry-run]
+                 [--keep-going]
+
+Pipeline runner (DAG)
+
+options:
+  -h, --help            show this help message and exit
+  --pipeline, -p PIPELINE
+                        Pipeline YAML file
+  --list                Print the plan without executing it
+  --dry-run             Print commands without executing them
+  --keep-going          Continue even if a stage fails
+
+Selection:
+  --only ONLY [ONLY ...]
+                        Run only the selected stage(s). Dependencies are included by default.
+  --no-upstream         Used with --only: do not include dependencies; run exactly the selected stages.
+  --from FROM_STEP      Initial stage, inclusive, and everything downstream
+  --to TO_STEP          Run through this stage, inclusive
+  --after AFTER         Run only stages after X, excluding X
+  --before BEFORE       Run only stages before Y, excluding Y
+
+Stage selection (use names exactly as declared in the pipeline YAML):
+
+  --only STEP              Run only STEP. Upstream dependencies are included by default.
+  --no-upstream            Used with --only: do not run dependencies; run STEP in isolation.
+
+  --from STEP              Run from STEP to the end, including required dependencies.
+  --to STEP                Run from the beginning through STEP, including required dependencies.
+  --after STEP             Run only stages that depend directly or indirectly on STEP.
+  --before STEP            Run only stages required directly or indirectly by STEP.
+
+  --keep-going             Continue after a failed stage and report failures at the end.
+  --list                   Print the calculated execution plan and exit.
+  --dry-run                Print the plan and complete commands without executing them.
+
+Precedence rules when options are combined:
+  1) --only, with or without --no-upstream, takes precedence over all other filters.
+  2) Range filters are applied next: --from, --to, --after, and --before.
+  3) --list prints the final plan and exits without execution.
+  4) --dry-run prints the final plan and commands without execution.
+
+Dependency behavior:
+  - Without --no-upstream, required dependencies are always included.
+  - With --no-upstream, the selected stage runs alone and prerequisites are not guaranteed.
+
+Firmware-mode requirement:
+  - runner.py does not change LITEML_MODE in include/config.h.
+  - Select LITEML_MODE_REPLAY before reproducing the formal 1:1 validation builds.
+  - Select LITEML_MODE_FIELD only for live-sensor execution and deployment-cost acquisition.
+
+Complete examples:
+  # 1) Inspect a pipeline without executing it
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --list
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --dry-run
+
+  # 2) Build the six retained REPLAY configurations from the packaged firmware inputs
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_stm32_mlp_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_esp32_Conv1D_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_stm32_Conv1D_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_esp32_lstm_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_stm32_lstm_pipeline.yaml --only pio_build --no-upstream
+
+  # 3) Build, upload, and monitor one ESP32 configuration in separate stages
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --only pio_upload --no-upstream
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --only pio_monitor --no-upstream
+
+  # 4) Build, upload, and monitor one STM32 configuration in separate stages
+  python runner.py -p environment_stm32_mlp_pipeline.yaml --only pio_build --no-upstream
+  python runner.py -p environment_stm32_mlp_pipeline.yaml --only pio_upload --no-upstream
+  python runner.py -p environment_stm32_mlp_pipeline.yaml --only pio_monitor --no-upstream
+
+  # 5) Run build and upload as a bounded range; monitor remains a separate interactive stage
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --from pio_build --to pio_upload
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --only pio_monitor --no-upstream
+
+  # 6) Run a complete model-to-device pipeline
+  python runner.py -p environment_esp32_mlp_pipeline.yaml
+
+  # 7) Run only pio_build with all required upstream stages
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --only pio_build
+
+  # 8) Run from training through the end and continue collecting independent failures
+  python runner.py -p environment_esp32_mlp_pipeline.yaml --from base_training --keep-going
+
+Operational notes:
+  - Isolated pio_build requires the synchronized model, scaler, and Rolling-24 headers.
+  - Isolated pio_upload requires a successful build and a connected target.
+  - Isolated pio_monitor requires the correct serial port and firmware already running.
+  - pio_monitor is interactive and remains active until stopped or the monitor process exits.
+
+Retained build evidence:
+  The six build records correspond to the REPLAY firmware configurations used for stage-wise
+  conformance verification. FIELD configurations use the same PlatformIO projects and build
+  procedure, with the acquisition mode selected by a compile-time macro. See
+  environment_reports/final_builds/README.md.

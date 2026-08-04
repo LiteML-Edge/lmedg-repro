@@ -1,0 +1,7 @@
+Model,Hardware,Replay idle current (mA),Replay idle power (mW),Field idle current (mA),Field idle power (mW),Replay idle voltage (V),Field idle voltage (V),Replay log,Field log
+MLP,WEMOS LOLIN32,61.83,316.14,60.62,310.75,5.114,5.127,device-monitor-260725-090646.log,device-monitor-260725-123210.log
+MLP,NUCLEO-F411RE,55.12,270.29,58.12,286.43,4.903,4.929,device-monitor-260727-170448.log,device-monitor-260727-205824.log
+LSTM,WEMOS LOLIN32,61.88,316.69,60.14,308.49,5.119,5.131,device-monitor-260725-100758.log,device-monitor-260725-142952.log
+LSTM,NUCLEO-F411RE,51.58,254.47,57.95,285.77,4.935,4.932,device-monitor-260727-180657.log,device-monitor-260728-070726.log
+Conv1D Tiny,WEMOS LOLIN32,60.75,311.07,59.9,307.23,5.121,5.13,device-monitor-260725-111032.log,device-monitor-260725-152233.log
+Conv1D Tiny,NUCLEO-F411RE,55.52,272.07,57.78,285.07,4.9,4.934,device-monitor-260727-185942.log,device-monitor-260727-233942.log

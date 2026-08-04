@@ -1,0 +1,9 @@
+[
+  {
+    "copied_at": "20260412-172142",
+    "run": "run.v001",
+    "src": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\metrics\\environment_lstm\\quantized_model\\run.v001\\quantization_metrics_results\\environment_quantized_samples_replay_raw_2plus47_lstm.h",
+    "dst": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_lstm\\PlatfIO_ESP32_Wemos_lstm\\include\\environment_quantized_samples_replay_raw_2plus47_lstm.h",
+    "snapshot": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_lstm\\PlatfIO_ESP32_Wemos_lstm\\include\\_versions\\environment_quantized_samples_replay_raw_2plus47_lstm\\environment_quantized_samples_replay_raw_2plus47_lstm.20260412-172142.h"
+  }
+]

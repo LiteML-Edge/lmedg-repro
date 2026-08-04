@@ -1,0 +1,43 @@
+Resolving lolin32_Conv1D_Tiny dependencies...
+Platform espressif32 @ 6.10.0 (required: espressif32, <platformio-home>\platforms\espressif32)
+├── framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b (required: platformio/framework-arduinoespressif32 @ ~3.20017.0)
+├── tool-esptoolpy @ 1.40501.0 (required: platformio/tool-esptoolpy @ ~1.40501.0)
+├── tool-mkfatfs @ 2.0.1 (required: platformio/tool-mkfatfs @ ~2.0.0)
+├── tool-mklittlefs @ 1.203.210628 (required: platformio/tool-mklittlefs @ ~1.203.0)
+├── tool-mkspiffs @ 2.230.0 (required: platformio/tool-mkspiffs @ ~2.230.0)
+├── tool-openocd-esp32 @ 2.1100.20220706 (required: platformio/tool-openocd-esp32 @ ~2.1100.0)
+└── toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5 (required: espressif/toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5)
+
+Libraries
+├── Adafruit INA219 @ 1.2.3 (required: adafruit/Adafruit INA219 @ ^1.2.3, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\Adafruit INA219)
+│   ├── Adafruit BusIO @ 1.17.4 (required: Adafruit BusIO, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\Adafruit BusIO)
+│   ├── Adafruit GFX Library @ 1.12.6 (required: Adafruit GFX Library, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\Adafruit GFX Library)
+│   ├── Adafruit NeoPixel @ 1.15.5 (required: Adafruit NeoPixel, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\Adafruit NeoPixel)
+│   └── Adafruit SSD1306 @ 2.5.17 (required: Adafruit SSD1306, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\Adafruit SSD1306)
+├── ArduinoJson @ 7.4.3 (required: bblanchon/ArduinoJson @ ^7.0.0, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\ArduinoJson)
+├── AsyncTCP @ 3.5.0 (required: ESP32Async/AsyncTCP @ ^3.4.7, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\AsyncTCP)
+├── ESP8266 and ESP32 OLED driver for SSD1306 displays @ 4.6.2 (required: thingpulse/ESP8266 and ESP32 OLED driver for SSD1306 displays @ ^4.4.0, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\ESP8266 and ESP32 OLED driver for SSD1306 displays)
+├── ESPAsyncWebServer @ 3.11.2 (required: ESP32Async/ESPAsyncWebServer @ ^3.7.10, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\ESPAsyncWebServer)
+└── PubSubClient @ 2.8.0 (required: knolleary/PubSubClient @ ^2.8, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\lolin32_Conv1D_Tiny\PubSubClient)
+
+Resolving nucleo_f411re_Conv1D_Tiny dependencies...
+Platform ststm32 @ 19.7.0 (required: ststm32, <platformio-home>\platforms\ststm32)
+├── framework-arduinoststm32 @ 4.21200.0 (required: platformio/framework-arduinoststm32 @ ~4.21200.0)
+├── framework-cmsis @ 2.60300.0 (required: platformio/framework-cmsis @ ~2.60300.0)
+├── framework-cmsis-dsp @ 1.16.2 (required: platformio/framework-cmsis-dsp @ ~1.16.2)
+├── tool-dfuutil @ 1.11.0 (required: platformio/tool-dfuutil @ ~1.11.0)
+├── tool-dfuutil-arduino @ 1.11.0 (required: platformio/tool-dfuutil-arduino @ ~1.11.0)
+├── tool-jlink @ 1.92000.0 (required: platformio/tool-jlink @ ^1.92000.0)
+├── tool-openocd @ 3.1200.7 (required: platformio/tool-openocd @ ~3.1200.0)
+├── tool-stm32duino @ 1.0.2 (required: platformio/tool-stm32duino @ ~1.0.1)
+├── tool-stm32flash @ 0.7.0 (required: platformio/tool-stm32flash @ ~0.7.0)
+└── toolchain-gccarmnoneeabi @ 1.120301.0 (required: platformio/toolchain-gccarmnoneeabi @ ~1.120301.0)
+
+Libraries
+├── Adafruit INA219 @ 1.2.3 (required: adafruit/Adafruit INA219 @ ^1.2.3, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\nucleo_f411re_Conv1D_Tiny\Adafruit INA219)
+│   ├── Adafruit BusIO @ 1.17.4 (required: Adafruit BusIO, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\nucleo_f411re_Conv1D_Tiny\Adafruit BusIO)
+│   ├── Adafruit GFX Library @ 1.12.6 (required: Adafruit GFX Library, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\nucleo_f411re_Conv1D_Tiny\Adafruit GFX Library)
+│   ├── Adafruit NeoPixel @ 1.15.5 (required: Adafruit NeoPixel, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\nucleo_f411re_Conv1D_Tiny\Adafruit NeoPixel)
+│   └── Adafruit SSD1306 @ 2.5.17 (required: Adafruit SSD1306, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\nucleo_f411re_Conv1D_Tiny\Adafruit SSD1306)
+└── ArduinoJson @ 7.4.3 (required: bblanchon/ArduinoJson @ ^7.0.0, <repository-root>\firmwares\environment_Conv1D_Tiny\PlatfIO_Conv1D_Tiny\.pio\libdeps\nucleo_f411re_Conv1D_Tiny\ArduinoJson)
+

@@ -1,0 +1,16 @@
+﻿LiteML-Edge — Local Libraries Report
+Project: MLP firmware
+Project path: firmwares\environment_mlp\PlatfIO_mlp
+Library directory: firmwares\environment_mlp\PlatfIO_mlp\lib
+Generated: 2026-08-02 09:33:31
+Library count: 4
+
+Library                 Version      Manifest           Files Size_MB RelativePath               
+-------                 -------      --------           ----- ------- ------------               
+Adafruit Unified Sensor 1.1.15       library.properties     8   0,041 lib\Adafruit Unified Sensor
+DHT sensor library      1.4.7        library.properties    19   0,047 lib\DHT sensor library     
+flatbuffers             Not declared None                  32   0,427 lib\flatbuffers            
+tflite-micro            2.14.0       library.json        1989  62,163 lib\tflite-micro           
+
+
+

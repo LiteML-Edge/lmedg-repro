@@ -1,0 +1,9 @@
+Ref_ID,Representative_Work,DOI,Replay-driven,Offline↔firmware,Stage-wise,Exported contract artifacts,On-device reporting,Decision_Basis
+[5],MLonMCU,10.1145/3615338.3618128,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[6],MLino bench,10.1016/j.sysarc.2024.103262,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[7],Quantization and Deployment,10.3390/s21092984,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[8],Robustifying Deployment,10.3390/s21041339,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[15],U-TOE,10.23919/PEMWN58813.2023.10304946,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[16],Evaluation Methodology,10.1016/j.iot.2023.100729,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[18],EdgeMark,10.1016/j.sysarc.2025.103488,,,,,✓,Explicit on-device reporting identified in the reviewed paper.
+[22],RIOT-ML,10.1007/s12243-024-01041-5,,,,,✓,Explicit on-device reporting identified in the reviewed paper.

@@ -1,0 +1,11 @@
+﻿
+
+Caption        : Microsoft Windows 11 Home Single Language
+Version        : 10.0.26100
+BuildNumber    : 26100
+OSArchitecture : 64 bits
+InstallDate    : 25/03/2025 10:50:28
+LastBootUpTime : 01/08/2026 00:13:26
+
+
+

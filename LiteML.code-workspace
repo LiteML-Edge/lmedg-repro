@@ -1,0 +1,51 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "firmwares/environment_mlp/PlatfIO_mlp",
+      "name": "FW_esp32_stm32_mlp"
+    },
+    {
+      "path": "firmwares/environment_lstm/PlatfIO_lstm",
+      "name": "FW_esp32_stm32_lstm"
+    },
+    {
+      "path": "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny",
+      "name": "FW_esp32_stm32_Conv1D_Tiny"
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "terminal.integrated.profiles.windows": {
+      "PowerShell (LiteML venv)": {
+        "path": "powershell.exe",
+        "args": [
+          "-NoExit",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          ".\\.venv\\Scripts\\Activate.ps1"
+        ]
+      }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell (LiteML venv)",
+    "files.associations": {
+      "thread": "cpp",
+      "array": "cpp",
+      "deque": "cpp",
+      "list": "cpp",
+      "string": "cpp",
+      "unordered_map": "cpp",
+      "unordered_set": "cpp",
+      "vector": "cpp",
+      "string_view": "cpp",
+      "random": "cpp",
+      "regex": "cpp",
+      "cmath": "cpp"
+    },
+    "git.ignoreLimitWarning": true
+  }
+}

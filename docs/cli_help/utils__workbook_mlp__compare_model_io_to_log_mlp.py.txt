@@ -1,0 +1,25 @@
+RETURN=0
+STDOUT:
+usage: compare_model_io_to_log_mlp.py [-h] [--log LOG_PATH]
+                                      [--log-dir LOG_DIR] [--out OUT_PATH]
+                                      [--out-dir OUT_DIR]
+                                      [--platform {auto,all,esp32,stm32f411re}]
+                                      [--mode {auto,replay}]
+
+Compare immediate model I/O against a Replay firmware log, while selecting
+logs and output workbooks by hardware platform.
+
+options:
+  -h, --help            show this help message and exit
+  --log LOG_PATH        Explicit device-monitor .log/.txt/.zip
+  --log-dir LOG_DIR     Directory tree containing device-monitor logs
+  --out OUT_PATH        Exact output .xlsx path (single platform only)
+  --out-dir OUT_DIR     Workbook root; platform/mode subfolders are created
+  --platform {auto,all,esp32,stm32f411re}
+                        Hardware platform filter. Use 'all' to generate one
+                        workbook per platform.
+  --mode {auto,replay}  Log mode filter. Use 'replay' explicitly or 'auto' to
+                        detect the log mode; only Replay logs are accepted by
+                        this audit.
+
+STDERR:

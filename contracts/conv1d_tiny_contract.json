@@ -1,0 +1,156 @@
+{
+  "model": "Conv1D Tiny",
+  "contract_tuple": "C = (S, K, W, Q, P, M)",
+  "S": {
+    "description": "Feature and target schema",
+    "features": [
+      "T_out",
+      "H_out",
+      "T_in_lag1",
+      "H_in_lag1",
+      "T_out_lag1",
+      "H_out_lag1",
+      "T_in_lag2",
+      "H_in_lag2",
+      "sin_hour",
+      "cos_hour",
+      "weekday",
+      "month"
+    ],
+    "targets": [
+      "T_in",
+      "H_in"
+    ],
+    "raw_replay_fields": [
+      "epoch",
+      "T_out",
+      "H_out",
+      "T_in",
+      "H_in_raw"
+    ]
+  },
+  "K": {
+    "description": "Frozen scaling constants",
+    "X_MIN": [
+      21.110001,
+      43.0,
+      24.360001,
+      60.620712,
+      21.110001,
+      43.0,
+      24.360001,
+      60.620712,
+      -1.0,
+      -1.0,
+      0.0,
+      1.0
+    ],
+    "X_MAX": [
+      35.0,
+      100.0,
+      28.68,
+      75.301254,
+      35.0,
+      100.0,
+      28.68,
+      75.301254,
+      1.0,
+      1.0,
+      6.0,
+      12.0
+    ],
+    "X_FEATURE_RANGE": [
+      0.0,
+      1.0
+    ],
+    "DY_MIN": [
+      -1.11,
+      -0.747992
+    ],
+    "DY_MAX": [
+      0.91,
+      0.649111
+    ],
+    "Y_FEATURE_RANGE": [
+      0.0,
+      1.0
+    ],
+    "scaling_contract": "residual_no_calibration_no_head_gain"
+  },
+  "W": {
+    "description": "Windowing, chronology, warm-up, and valid-event policy",
+    "window_steps": 24,
+    "stride": 1,
+    "seed_rows": 2,
+    "seed_row_policy": "Two preceding raw rows initialize lag features and the causal humidity state; they are excluded from the chronological Rolling-24 sample count and from reported-event counts.",
+    "chronological_replay_rows": 47,
+    "total_raw_rows": 49,
+    "rolling_cardinality_rule": "For W=24, stride=1, and n=24 valid events, 47 chronological samples are required: W + (n - 1).",
+    "warmup_policy": {
+      "complete_window_required": true,
+      "incomplete_window_samples_excluded": true,
+      "excluded_from_stagewise_conformance_counts": true,
+      "excluded_from_metric_aggregation": true
+    },
+    "valid_event_definition": "A chronologically aligned inference event evaluated only after a complete 24-step window is available.",
+    "reported_valid_events": 24,
+    "humidity_ema_alpha": 0.08,
+    "humidity_ema_initial_state": 64.087463
+  },
+  "Q": {
+    "description": "Tensor shape, dtype, and conversion contract",
+    "input_dtype": "int8",
+    "output_dtype": "float32",
+    "input_shape": [
+      1,
+      24,
+      12
+    ],
+    "output_layout": "two scalar tensors [1, 1]",
+    "quantization_style": "HYBRID_INT8_TO_FLOAT32_WITH_QDQ"
+  },
+  "P": {
+    "description": "Preprocessing, residual semantics, output mapping, and reconstruction contract",
+    "humidity_preprocessing_order": "Apply the causal EMA to raw H_in using the W parameters before constructing H_in lag features.",
+    "lag_policy": "Construct lag-1 and lag-2 features after humidity smoothing and preserve chronological sample order.",
+    "input_clipping": "Clip each feature to the frozen per-feature X_MIN/X_MAX bounds before scaling.",
+    "input_scaling": "Per-feature MinMax scaling to [0, 1] using the frozen K constants",
+    "target_form": "Residual targets for T_in and H_in",
+    "semantic_output_order": [
+      "delta_T_in",
+      "delta_H_in"
+    ],
+    "reconstruction": "Inverse-scale the residual outputs, then compute T_in = T_in_lag1 + delta_T_in and H_in = H_in_lag1 + delta_H_in.",
+    "calibration_or_head_gain": "None"
+  },
+  "M": {
+    "description": "Validation metrics, valid-event aggregation, rounding, and stage decision rules",
+    "metrics": [
+      "MAE",
+      "RMSE",
+      "R2"
+    ],
+    "event_inclusion_policy": "Only complete-window, post-warm-up valid events are included in conformance counts and Rolling-24 metric aggregation.",
+    "aggregation_event_count": 24,
+    "prediction_agreement_decimals": 2,
+    "rolling_metric_agreement_decimals": 4,
+    "stage_tolerances": {
+      "raw_tensor_bytes_and_metadata": 0.0,
+      "model_input_numeric": 2e-06,
+      "decoded_raw_output": 2e-06,
+      "semantic_output": 2e-06,
+      "final_postprocessed_prediction": 2e-05,
+      "auxiliary_semantic_debug": 2e-05,
+      "policy_note": "Fixed values are applied uniformly across models and targets. Workbook calibration sheets report observed deviations but do not overwrite the adopted pass/fail thresholds."
+    }
+  },
+  "artifacts": {
+    "tflite_model": "trainings/environment_Conv1D_Tiny/quantized_model/run/environment_quantized_model_Conv1D_Tiny.tflite",
+    "model_header": "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/include/environment_model_data_Conv1D_Tiny.h",
+    "scaler_header": "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/include/scalers_exported_Conv1D_Tiny.h",
+    "replay_header": "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/include/environment_quantized_samples_replay_raw_2plus47_Conv1D_Tiny.h",
+    "host_reference_evidence": "metrics/environment_Conv1D_Tiny/quantized_model/run/quantization_metrics_results/",
+    "stagewise_workbooks": "utils/workbook_Conv1D_Tiny/",
+    "selected_logs": "firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/"
+  }
+}

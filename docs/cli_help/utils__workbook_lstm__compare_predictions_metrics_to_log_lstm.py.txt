@@ -1,0 +1,47 @@
+RETURN=0
+STDOUT:
+usage: compare_predictions_metrics_to_log_lstm.py [-h] [--pred-xlsx PRED_XLSX]
+                                                  [--log LOG_PATH]
+                                                  [--log-dir LOG_DIR]
+                                                  [--metrics-xlsx METRICS_XLSX]
+                                                  [--out OUT_PATH]
+                                                  [--out-dir OUT_DIR]
+                                                  [--platform {auto,all,esp32,stm32f411re}]
+                                                  [--mode {auto,replay}]
+                                                  [--excel-row-start EXCEL_ROW_START]
+                                                  [--excel-row-end EXCEL_ROW_END]
+                                                  [--round-decimals ROUND_DECIMALS]
+                                                  [--metrics-round-decimals METRICS_ROUND_DECIMALS]
+
+Compare final rolling24 predictions against a Replay firmware log, selecting
+logs and workbooks by hardware platform.
+
+options:
+  -h, --help            show this help message and exit
+  --pred-xlsx PRED_XLSX
+                        Path to
+                        environment_quantized_predictions_rolling24_lstm.xlsx
+  --log LOG_PATH        Explicit device-monitor .log/.txt/.zip
+  --log-dir LOG_DIR     Directory tree containing device-monitor logs
+  --metrics-xlsx METRICS_XLSX
+                        Path to
+                        environment_quantized_metrics_rolling24_lstm.xlsx
+  --out OUT_PATH        Exact output .xlsx path (single platform only)
+  --out-dir OUT_DIR     Workbook root; platform/mode subfolders are created
+  --platform {auto,all,esp32,stm32f411re}
+                        Hardware platform filter. Use 'all' to generate one
+                        workbook per platform.
+  --mode {auto,replay}  Log mode filter. Use 'replay' explicitly or 'auto' to
+                        detect the log mode; only Replay logs are accepted by
+                        this audit.
+  --excel-row-start EXCEL_ROW_START
+                        First Excel row (inclusive) to read from spreadsheet
+  --excel-row-end EXCEL_ROW_END
+                        Last Excel row (inclusive) to read from spreadsheet
+  --round-decimals ROUND_DECIMALS
+                        Decimals used for spreadsheet/display-level prediction
+                        match
+  --metrics-round-decimals METRICS_ROUND_DECIMALS
+                        Decimals used for latest metrics comparison
+
+STDERR:

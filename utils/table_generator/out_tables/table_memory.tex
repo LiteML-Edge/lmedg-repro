@@ -1,0 +1,65 @@
+\begin{table}[!t]
+\centering
+\caption{MODEL SIZE, TENSOR ARENA, AND HEAP HEADROOM.}
+\label{tab:memory}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.05}
+
+\begin{tabular*}{\columnwidth}{
+@{\extracolsep{\fill}}
+>{\centering\arraybackslash}m{1.37cm}
+>{\centering\arraybackslash}m{2.04cm}
+S[
+    table-column-width=1.02cm,
+    table-format=2.2,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=1.2,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=3.1,
+    table-number-alignment=center
+]
+S[
+    table-column-width=1.02cm,
+    table-format=3.1,
+    table-number-alignment=center
+]
+@{}}
+\toprule
+\midrule
+\multirow[c]{1.7}{*}{\textbf{Model}} &
+\multirow[c]{1.7}{*}{\textbf{Hardware}} &
+\multicolumn{1}{c}{
+    \multirow[c]{2}{*}{
+        \shortstack[c]{\textbf{Model size}\\\textbf{(kB)}}
+    }
+} &
+\multicolumn{1}{c}{
+    \multirow[c]{2}{*}{
+        \shortstack[c]{\textbf{Arena}\\\textbf{(kB)}}
+    }
+} &
+\multicolumn{2}{c}{
+    \shortstack[c]{\textbf{Min. free heap}\\\textbf{(kB)}}
+} \\
+\cmidrule(lr){5-6}
+& & & &
+\multicolumn{1}{c}{\textbf{Replay}} &
+\multicolumn{1}{c}{\textbf{Field}} \\
+\midrule
+\multirow[c]{2}{*}{MLP} & WEMOS LOLIN32 & 6.46 & 0.91 & 238.7 & 239.0 \\
+ & NUCLEO-F411RE & 6.46 & 0.89 & 102.2 & 103.3 \\
+\multirow[c]{2}{*}{LSTM} & WEMOS LOLIN32 & 9.46 & 3.42 & 238.7 & 239.3 \\
+ & NUCLEO-F411RE & 9.46 & 3.41 & 102.2 & 103.3 \\
+\multirow[c]{2}{*}{Conv1D Tiny} & WEMOS LOLIN32 & 7.12 & 2.59 & 238.7 & 239.0 \\
+ & NUCLEO-F411RE & 7.12 & 2.56 & 102.2 & 103.3 \\
+\midrule
+\bottomrule
+\end{tabular*}
+\end{table}

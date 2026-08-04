@@ -1,0 +1,7 @@
+Model,Hardware,Replay energy (uWh),Replay time (ms),Field energy (uWh),Field time (ms),Replay pipeline energy (uWh),Replay pipeline time (ms),Field pipeline energy (uWh),Field pipeline time (ms),Replay log,Field log
+MLP,WEMOS LOLIN32,0.165,1.08,0.146,1.06,6.066,62.68,0.367,4.03,device-monitor-260725-090646.log,device-monitor-260725-123210.log
+MLP,NUCLEO-F411RE,0.181,1.03,0.195,1.04,2.607,34.75,0.483,6.03,device-monitor-260727-170448.log,device-monitor-260727-205824.log
+LSTM,WEMOS LOLIN32,1.376,14.04,1.309,13.84,6.905,72.14,1.557,17.05,device-monitor-260725-100758.log,device-monitor-260725-142952.log
+LSTM,NUCLEO-F411RE,1.91,25.46,2.134,25.48,4.691,65.69,2.422,30.52,device-monitor-260727-180657.log,device-monitor-260728-070726.log
+Conv1D Tiny,WEMOS LOLIN32,0.605,5.89,0.573,5.72,8.84,93.22,0.813,8.92,device-monitor-260725-111032.log,device-monitor-260725-152233.log
+Conv1D Tiny,NUCLEO-F411RE,0.598,6.55,0.628,6.56,5.466,72.09,0.918,11.6,device-monitor-260727-185942.log,device-monitor-260727-233942.log

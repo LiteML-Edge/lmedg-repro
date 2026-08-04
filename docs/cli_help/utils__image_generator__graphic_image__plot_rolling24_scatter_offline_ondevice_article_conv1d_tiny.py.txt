@@ -1,0 +1,40 @@
+RETURN=0
+STDOUT:
+usage: plot_rolling24_scatter_offline_ondevice_article_conv1d_tiny.py
+       [-h] --excel EXCEL [--sheet SHEET] [--offline_title OFFLINE_TITLE]
+       [--ondevice_title ONDEVICE_TITLE]
+       [--offline_metrics_title OFFLINE_METRICS_TITLE]
+       [--ondevice_metrics_title ONDEVICE_METRICS_TITLE]
+       [--offline_sheet OFFLINE_SHEET] [--ondevice_sheet ONDEVICE_SHEET]
+       [--offline_metrics_sheet OFFLINE_METRICS_SHEET]
+       [--ondevice_metrics_sheet ONDEVICE_METRICS_SHEET] [--variable {T,H}]
+       [--outdir OUTDIR] [--basename BASENAME] [--dpi DPI]
+       [--metric_decimals METRIC_DECIMALS] [--no_panel_labels] [--outer_box]
+       [--no_grid]
+
+Generate Rolling-24 scatter plots using prediction rows and spreadsheet metric
+rows.
+
+options:
+  -h, --help            show this help message and exit
+  --excel EXCEL         Excel workbook path (.xlsx).
+  --sheet SHEET         Sheet containing all four blocks. Default: first
+                        sheet.
+  --offline_title OFFLINE_TITLE
+  --ondevice_title ONDEVICE_TITLE
+  --offline_metrics_title OFFLINE_METRICS_TITLE
+  --ondevice_metrics_title ONDEVICE_METRICS_TITLE
+  --offline_sheet OFFLINE_SHEET
+  --ondevice_sheet ONDEVICE_SHEET
+  --offline_metrics_sheet OFFLINE_METRICS_SHEET
+  --ondevice_metrics_sheet ONDEVICE_METRICS_SHEET
+  --variable {T,H}
+  --outdir OUTDIR
+  --basename BASENAME
+  --dpi DPI
+  --metric_decimals METRIC_DECIMALS
+  --no_panel_labels
+  --outer_box
+  --no_grid
+
+STDERR:

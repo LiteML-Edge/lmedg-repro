@@ -1,0 +1,7 @@
+usage: report_env.py [-h] [--output OUTPUT]
+
+Generate a Markdown table of installed packages
+
+options:
+  -h, --help           show this help message and exit
+  --output, -o OUTPUT  Output file (.md)

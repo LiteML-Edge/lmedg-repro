@@ -1,0 +1,78 @@
+steps:
+  - name: preprocess
+    script: datasets/environment_lstm/environment_dataset_lstm.py
+    #args: ["--input", "data/raw", "--output", "data/clean"]
+    env:
+      PYTHONPATH: "."
+    cwd: null
+
+  - name: base_training
+    script: trainings/environment_lstm/base_model/environment_base_model_lstm.py
+    #args: ["--epochs", "3", "--data", "data/clean", "--out", "artifacts/model.txt"]
+    depends_on: ["preprocess"]
+  
+  - name: prune_optimizing
+    script: trainings/environment_lstm/pruned_model/environment_pruned_model_lstm.py
+    #args: []
+    depends_on: ["base_training"]
+    continue_on_error: false
+
+  - name: quantize_optimizing
+    script: trainings/environment_lstm/quantized_model/environment_quantized_model_lstm.py
+    #args: []
+    depends_on: ["prune_optimizing"]
+    continue_on_error: false
+
+  - name: header_generator
+    script: trainings/environment_lstm/header_generator/header_generator_lstm.py
+    #args: []
+    depends_on: ["quantize_optimizing"]
+    continue_on_error: false
+
+  - name: pio_pull_model
+    script: utils/global_utils/pio_pull_headers.py
+    args: [--project-dir, "firmwares/environment_lstm/PlatfIO_lstm", --selector, "latest", --header-source, "environment_model_data_lstm.h", --header-dst, "environment_model_data_lstm.h", --versioning, "1", --runs-base, "trainings/environment_lstm/header_generator"]
+    depends_on: ["header_generator"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null  
+    
+  - name: scalers_exporter
+    script: trainings/environment_lstm/scalers_exporter/scale_vector_exporter_lstm.py
+    #args: []
+    depends_on: ["pio_pull_model"]
+    continue_on_error: false
+
+  - name: pio_pull_scalers
+    script: utils/global_utils/pio_pull_headers.py
+    args: [--project-dir, "firmwares/environment_lstm/PlatfIO_lstm", --selector, "latest", --header-source, "scalers_exported_lstm.h", --header-dst, "scalers_exported_lstm.h", --versioning, "1", --runs-base, "trainings/environment_lstm/scalers_exporter"]
+    depends_on: ["scalers_exporter"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null  
+     
+  - name: pio_pull_rolling24
+    script: utils/global_utils/pio_pull_headers.py
+    args: [--project-dir, "firmwares/environment_lstm/PlatfIO_lstm", --selector, "latest", --header-source, "environment_quantized_samples_replay_raw_2plus47_lstm.h", --header-dst, "environment_quantized_samples_replay_raw_2plus47_lstm.h", --versioning, "1", --runs-base, 'metrics\environment_lstm\quantized_model']
+    depends_on: ["scalers_exporter"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null 
+
+  - name: pio_build
+    script: utils/global_utils/pio_build.py
+    args: ["--project-dir", "firmwares/environment_lstm/PlatfIO_lstm", "--selector", "latest", "--extra", "-e", "nucleo_f411re_lstm", "--disable-auto-clean"]
+    depends_on: ["pio_pull_scalers", "pio_pull_rolling24"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null
+
+  - name: pio_upload
+    script: utils/global_utils/pio_upload.py
+    args: ["--project-dir", "firmwares/environment_lstm/PlatfIO_lstm", "--selector", "latest", "--extra", "-e", "nucleo_f411re_lstm", "--disable-auto-clean"]
+    depends_on: ["pio_build"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null
+
+  - name: pio_monitor
+    script: utils/global_utils/pio_monitor.py
+    args: ["--project-dir", "firmwares/environment_lstm/PlatfIO_lstm", "--env", "nucleo_f411re_lstm", "--port", "COM8", "--baud", "115200", "--wait", "20"]
+    depends_on: ["pio_upload"]
+    env: { RUNNER_PROJECT_ROOT: "." }
+    cwd: null

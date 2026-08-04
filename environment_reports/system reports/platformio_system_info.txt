@@ -1,0 +1,14 @@
+﻿--------------------------  -----------------------------------------------------------------------------------------
+PlatformIO Core             6.1.19
+Python                      3.10.0-final.0
+System Type                 windows_amd64
+Platform                    Windows-10
+File System Encoding        utf-8
+Locale Encoding             cp1252
+PlatformIO Core Directory   <platformio-home>
+PlatformIO Core Executable  <repository-root>\.venv\Scripts\platformio.exe
+Python Executable           <repository-root>\.venv\Scripts\python.exe
+Global Libraries            0
+Development Platforms       2
+Tools & Toolchains          19
+--------------------------  -----------------------------------------------------------------------------------------

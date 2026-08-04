@@ -1,0 +1,13 @@
+model,target,platform,mode,path,reported_model_arena_total
+Conv1D Tiny,esp32,WEMOS LOLIN32,REPLAY,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260725-111032.log,7.12kB (FLASH) | Arena=2.59kB (RAM) | Total≈9.72kB
+Conv1D Tiny,esp32,WEMOS LOLIN32,FIELD,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260725-152233.log,7.12kB (FLASH) | Arena=2.59kB (RAM) | Total≈9.72kB
+Conv1D Tiny,stm32f411re,NUCLEO-F411RE,REPLAY,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260727-185942.log,7.12kB (FLASH) | Arena=2.56kB (RAM) | Total≈9.69kB
+Conv1D Tiny,stm32f411re,NUCLEO-F411RE,FIELD,firmwares/environment_Conv1D_Tiny/PlatfIO_Conv1D_Tiny/logs/device-monitor-260727-233942.log,7.12kB (FLASH) | Arena=2.56kB (RAM) | Total≈9.69kB
+LSTM,esp32,WEMOS LOLIN32,REPLAY,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260725-100758.log,9.46kB (FLASH) | Arena=3.42kB (RAM) | Total≈12.88kB
+LSTM,esp32,WEMOS LOLIN32,FIELD,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260725-142952.log,9.46kB (FLASH) | Arena=3.42kB (RAM) | Total≈12.88kB
+LSTM,stm32f411re,NUCLEO-F411RE,REPLAY,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260727-180657.log,9.46kB (FLASH) | Arena=3.41kB (RAM) | Total≈12.87kB
+LSTM,stm32f411re,NUCLEO-F411RE,FIELD,firmwares/environment_lstm/PlatfIO_lstm/logs/device-monitor-260728-070726.log,9.46kB (FLASH) | Arena=3.41kB (RAM) | Total≈12.87kB
+MLP,esp32,WEMOS LOLIN32,REPLAY,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260725-090646.log,6.46kB (FLASH) | Arena=0.91kB (RAM) | Total≈7.37kB
+MLP,esp32,WEMOS LOLIN32,FIELD,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260725-123210.log,6.46kB (FLASH) | Arena=0.91kB (RAM) | Total≈7.37kB
+MLP,stm32f411re,NUCLEO-F411RE,REPLAY,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260727-170448.log,6.46kB (FLASH) | Arena=0.89kB (RAM) | Total≈7.36kB
+MLP,stm32f411re,NUCLEO-F411RE,FIELD,firmwares/environment_mlp/PlatfIO_mlp/logs/device-monitor-260727-205824.log,6.46kB (FLASH) | Arena=0.89kB (RAM) | Total≈7.36kB
