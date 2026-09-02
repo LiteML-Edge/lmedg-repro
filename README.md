@@ -1,10 +1,15 @@
 # LiteML-Edge - Verification and Reproduction Pack for This Revision
 
-This repository accompanies the revised manuscript:
+## Manuscript Information
 
-**LiteML-Edge: A Contract-Centered Framework and Methodology for Replay-Driven 1:1 Python--Firmware Validation in TinyML**
+**Title:** LiteML-Edge: A Contract-Centered Framework and Methodology for Replay-Driven 1:1 Python--Firmware Validation in TinyML  
+**Submission ID:** 10820  
+**Authors:** Charles Pereira dos Santos; Israel Gondres Torné; Carlos Maurício Seródio Figueiredo; Fábio de Sousa Cardoso  
+**Journal:** IEEE Latin America Transactions  
+**Hardware targets:** WEMOS LOLIN32 (ESP32) and NUCLEO-F411RE (STM32F411RE)  
+**Evaluated models:** MLP, Conv1D Tiny, and LSTM
 
-It contains the retained evidence and the complete reconstruction workflow for the three evaluated models and two MCU targets.
+This repository contains the retained evidence and the complete reconstruction workflow described in the manuscript.
 
 ## Which file should be opened first?
 
