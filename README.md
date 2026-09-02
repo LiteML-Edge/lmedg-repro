@@ -1,4 +1,4 @@
-# LiteML-Edge - Verification and Reproduction Pack for This Revision
+# LiteML-Edge - Verification and Reproduction Pack
 
 ## Manuscript Information
 
