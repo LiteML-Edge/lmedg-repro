@@ -50,6 +50,16 @@ The packaged workflow covers raw environmental data, processed datasets, baselin
 - FIELD uses the same PlatformIO projects and build procedure, but the acquisition mode is selected by a compile-time macro in each firmware project's `include/config.h`.
 - The formal stage-wise Python--firmware conformance evidence is based on REPLAY. FIELD provides live-sensor and hardware-dependent deployment evidence.
 
+### Contract specification update
+
+The machine-readable contracts under `contracts/` were aligned with the
+formal definition `C = (S, K, W, Q, P, M)` used in the accepted manuscript.
+
+This update clarifies the machine-readable specification and implementation
+traceability only. It does not alter datasets, preprocessing behavior, model
+artifacts, firmware execution, tolerances, metrics, numerical results, or
+conclusions. Historical release tags remain unchanged.
+
 ## Repository structure
 
 - `contracts/`: machine-readable `C=(S,K,W,Q,P,M)` contracts and the common tolerance policy.

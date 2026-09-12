@@ -2,7 +2,7 @@
   "model": "LSTM",
   "contract_tuple": "C = (S, K, W, Q, P, M)",
   "S": {
-    "description": "Feature and target schema",
+    "description": "Feature, target, raw Replay, feature-construction, humidity-conditioning, and time-feature schema.",
     "features": [
       "T_out",
       "H_out",
@@ -17,7 +17,18 @@
       "weekday",
       "month"
     ],
-    "targets": [
+    "feature_vector_shape": [
+      12
+    ],
+    "absolute_targets": [
+      "T_in",
+      "H_in"
+    ],
+    "model_targets": [
+      "delta_T_in",
+      "delta_H_in"
+    ],
+    "prediction_outputs": [
       "T_in",
       "H_in"
     ],
@@ -27,10 +38,33 @@
       "H_out",
       "T_in",
       "H_in_raw"
-    ]
+    ],
+    "humidity_conditioning": {
+      "input": "H_in_raw",
+      "operation": "causal EMA",
+      "alpha": 0.08,
+      "order": "Apply the causal EMA to raw H_in before constructing H_in_lag1 and H_in_lag2.",
+      "replay_pre_block_state": 64.087463,
+      "replay_pre_block_state_semantics": "Filtered H_in EMA state immediately preceding the first exported Replay seed row.",
+      "field_initialization": "Initialize the EMA state from the first valid Field H_in sample."
+    },
+    "lag_policy": {
+      "order": "Construct lag-1 and lag-2 features after humidity conditioning.",
+      "chronology": "Preserve chronological sample order.",
+      "lag1_baseline": "T_in_lag1 and H_in_lag1 are the absolute-state baselines used by P for residual reconstruction."
+    },
+    "time_feature_policy": {
+      "sin_hour": "sin(2*pi*hour/24)",
+      "cos_hour": "cos(2*pi*hour/24)",
+      "weekday": "0=Monday, ..., 6=Sunday (pandas-compatible)",
+      "month": "1..12",
+      "replay_time_source": "Exported epoch associated with the deterministic Replay row.",
+      "field_time_source": "Civil/device time when available.",
+      "field_fallback": "If civil time is unavailable, derive hour cyclic features from the millis-based synthetic hour; weekday=0 and month=1."
+    }
   },
   "K": {
-    "description": "Frozen scaling constants",
+    "description": "Frozen scaler definition, forward/inverse MinMax transforms, and input-bound policy.",
     "X_MIN": [
       21.110001,
       43.0,
@@ -75,30 +109,38 @@
       0.0,
       1.0
     ],
-    "scaling_contract": "residual_no_calibration_no_head_gain"
+    "input_bound_policy": {
+      "python_reference": "Clip each physical-domain input feature to its frozen X_MIN/X_MAX bounds before MinMax scaling.",
+      "firmware_runtime": "Apply MinMax scaling using the same frozen X_MIN/X_MAX bounds, then clamp the normalized value to [0, 1].",
+      "equivalence": "For the same X_MIN/X_MAX bounds, both forms are algebraically equivalent."
+    },
+    "input_forward_scaling": "Per-feature MinMax scaling to [0, 1] using X_MIN/X_MAX.",
+    "target_forward_scaling": "Residual model targets delta_T_in and delta_H_in use MinMax scaling to [0, 1] using DY_MIN/DY_MAX.",
+    "target_inverse_scaling": "Inverse MinMax using DY_MIN/DY_MAX recovers residuals in physical units before reconstruction in P.",
+    "parameters_frozen_during_validation": true
   },
   "W": {
-    "description": "Windowing, chronology, warm-up, and valid-event policy",
+    "description": "Rolling-window, stride, Replay chronology, seed-row processing, and warm-up exclusion policy.",
     "window_steps": 24,
     "stride": 1,
     "seed_rows": 2,
-    "seed_row_policy": "Two preceding raw rows initialize lag features and the causal humidity state; they are excluded from the chronological Rolling-24 sample count and from reported-event counts.",
+    "seed_row_policy": "The two preceding raw rows advance the causal H_in EMA from the exported pre-block EMA state and initialize lag history. Seed rows are not counted as chronological evaluation rows and are excluded from reported metrics.",
     "chronological_replay_rows": 47,
     "total_raw_rows": 49,
-    "rolling_cardinality_rule": "For W=24, stride=1, and n=24 valid events, 47 chronological samples are required: W + (n - 1).",
+    "rolling_cardinality_rule": "For W=24, stride=1, and n=24 reported valid events, 47 chronological rows are required: W + (n - 1).",
     "warmup_policy": {
       "complete_window_required": true,
       "incomplete_window_samples_excluded": true,
       "excluded_from_stagewise_conformance_counts": true,
       "excluded_from_metric_aggregation": true
     },
-    "valid_event_definition": "A chronologically aligned inference event evaluated only after a complete 24-step window is available.",
-    "reported_valid_events": 24,
-    "humidity_ema_alpha": 0.08,
-    "humidity_ema_initial_state": 64.087463
+    "execution_modes": {
+      "replay": "Deterministic header-driven chronology.",
+      "field": "Live-sensor chronology with the same post-acquisition rolling/window semantics."
+    }
   },
   "Q": {
-    "description": "Tensor shape, dtype, and conversion contract",
+    "description": "Tensor I/O shape, dtype, quantization metadata, representable-range saturation, and semantic output mapping.",
     "input_dtype": "float32",
     "output_dtype": "float32",
     "input_shape": [
@@ -107,42 +149,67 @@
       12
     ],
     "output_layout": "one tensor [1, 2]",
-    "quantization_style": "HYBRID_FLOAT_IO_WITH_SELECT_TF_OPS"
-  },
-  "P": {
-    "description": "Preprocessing, residual semantics, output mapping, and reconstruction contract",
-    "humidity_preprocessing_order": "Apply the causal EMA to raw H_in using the W parameters before constructing H_in lag features.",
-    "lag_policy": "Construct lag-1 and lag-2 features after humidity smoothing and preserve chronological sample order.",
-    "input_clipping": "Clip each feature to the frozen per-feature X_MIN/X_MAX bounds before scaling.",
-    "input_scaling": "Per-feature MinMax scaling to [0, 1] using the frozen K constants",
-    "target_form": "Residual targets for T_in and H_in",
     "semantic_output_order": [
       "delta_T_in",
       "delta_H_in"
     ],
-    "reconstruction": "Inverse-scale the residual outputs, then compute T_in = T_in_lag1 + delta_T_in and H_in = H_in_lag1 + delta_H_in.",
-    "calibration_or_head_gain": "None"
+    "output_mapping": "Output position/channel 0 maps to delta_T_in; output position/channel 1 maps to delta_H_in.",
+    "input_layout": "Chronological Rolling-24 sequence with 12 features per step.",
+    "quantization_style": "HYBRID_FLOAT_IO",
+    "input_quantization": {
+      "applicable": false,
+      "reason": "Model input interface is float32."
+    },
+    "output_quantization": {
+      "applicable": false,
+      "reason": "Model output interface is float32."
+    }
+  },
+  "P": {
+    "description": "Post-processing order and residual absolute-state reconstruction contract.",
+    "target_form": "Residual outputs delta_T_in and delta_H_in.",
+    "mapping_source": "Apply the semantic output mapping defined in Q before residual inverse scaling.",
+    "residual_inverse_scaling": "Apply the DY_MIN/DY_MAX inverse transform defined in K to recover delta_T_in and delta_H_in in physical units.",
+    "reconstruction": {
+      "T_in": "T_in_lag1 + delta_T_in",
+      "H_in": "H_in_lag1 + delta_H_in"
+    },
+    "affine_correction": "None",
+    "head_gain": "None",
+    "output_clipping": "None"
   },
   "M": {
-    "description": "Validation metrics, valid-event aggregation, rounding, and stage decision rules",
+    "description": "Valid-event definition, conformance-update rule, Rolling-24 metric aggregation, rounding, and acceptance-policy reference.",
+    "valid_event_definition": {
+      "complete_window_required": true,
+      "successful_invocation_required": true,
+      "decoded_outputs_must_satisfy_Q": true,
+      "post_warmup_required": true
+    },
+    "valid_event_update_rule": "Update conformance counts and Rolling-24 aggregation only for valid post-warm-up inference events.",
+    "aggregation_event_count": 24,
     "metrics": [
       "MAE",
       "RMSE",
       "R2"
     ],
-    "event_inclusion_policy": "Only complete-window, post-warm-up valid events are included in conformance counts and Rolling-24 metric aggregation.",
-    "aggregation_event_count": 24,
+    "metric_scopes": [
+      "aggregate",
+      "T_in",
+      "H_in"
+    ],
+    "final_metric_component_count": 9,
     "prediction_agreement_decimals": 2,
     "rolling_metric_agreement_decimals": 4,
-    "stage_tolerances": {
-      "raw_tensor_bytes_and_metadata": 0.0,
-      "model_input_numeric": 2e-06,
-      "decoded_raw_output": 2e-06,
-      "semantic_output": 2e-06,
-      "final_postprocessed_prediction": 2e-05,
-      "auxiliary_semantic_debug": 2e-05,
-      "policy_note": "Fixed values are applied uniformly across models and targets. Workbook calibration sheets report observed deviations but do not overwrite the adopted pass/fail thresholds."
-    }
+    "conformance_checkpoints": {
+      "x_star": "Contract-consistent preprocessed input.",
+      "p_star": "Effective model tensor payload under Q.",
+      "o_raw": "Raw model output bytes/metadata and decoded outputs under Q.",
+      "y_star": "Mapped, inverse-scaled, reconstructed prediction under P.",
+      "predictions_and_metrics": "Final predictions and Rolling-24 metric vector over valid events."
+    },
+    "tolerance_policy_ref": "contracts/tolerance_policy.json",
+    "tolerance_policy_scope": "Single shared stage-wise acceptance policy applied unchanged to all evaluated models and hardware targets; numeric thresholds are not duplicated here."
   },
   "artifacts": {
     "tflite_model": "trainings/environment_lstm/quantized_model/run/environment_quantized_model_lstm.tflite",
@@ -152,5 +219,22 @@
     "host_reference_evidence": "metrics/environment_lstm/quantized_model/run/quantization_metrics_results/",
     "stagewise_workbooks": "utils/workbook_lstm/",
     "selected_logs": "firmwares/environment_lstm/PlatfIO_lstm/logs/"
+  },
+  "implementation_notes": {
+    "converter_note": "The primary converter path allows INT8 built-ins, float built-ins, and SELECT_TF_OPS. If that conversion fails, the fallback path uses TFLITE_BUILTINS + SELECT_TF_OPS with float32 input/output. These are converter/operator-set details and are not part of the formal tensor I/O contract Q.",
+    "firmware_safety_guard": {
+      "decoded_scaled_residual": "If a decoded scaled residual is non-finite, firmware replaces it with 0.0 before DY inverse scaling.",
+      "reconstructed_prediction": "If a reconstructed absolute prediction is non-finite, firmware falls back to the current acquired T_in or H_in value.",
+      "scope": "These are firmware-only safety guards outside the shared Python↔firmware equivalence path; they are not clipping, calibration, or part of contract element P."
+    },
+    "primary_converter_allowed_op_sets": [
+      "TFLITE_BUILTINS_INT8",
+      "TFLITE_BUILTINS",
+      "SELECT_TF_OPS"
+    ],
+    "fallback_converter_allowed_op_sets": [
+      "TFLITE_BUILTINS",
+      "SELECT_TF_OPS"
+    ]
   }
 }
