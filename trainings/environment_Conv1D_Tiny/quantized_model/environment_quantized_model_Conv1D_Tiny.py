@@ -954,7 +954,7 @@ T_pred = y_pred_orig[:, 0]
 H_pred = y_pred_orig[:, 1]
 
 # ---------------------
-# Metrics on the original scale (AFTER linear calibration)
+#Metrics on the original scale after residual inverse scaling and lag-1 reconstruction
 # ---------------------
 mse = mean_squared_error(y_test_orig, y_pred_orig)
 rmse = np.sqrt(mse)

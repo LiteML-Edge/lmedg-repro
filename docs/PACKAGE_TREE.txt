@@ -3800,7 +3800,6 @@ trainings/environment_Conv1D_Tiny/pruned_model/run/environment_pruned_model_Conv
 trainings/environment_Conv1D_Tiny/pruned_model/run/manifest.json
 trainings/environment_Conv1D_Tiny/quantized_model/
 trainings/environment_Conv1D_Tiny/quantized_model/environment_quantized_model_Conv1D_Tiny.py
-trainings/environment_Conv1D_Tiny/quantized_model/environment_quantized_model_portg_Conv1D_Tiny.py
 trainings/environment_Conv1D_Tiny/quantized_model/latest.txt
 trainings/environment_Conv1D_Tiny/quantized_model/run/
 trainings/environment_Conv1D_Tiny/quantized_model/run/environment_pruned_model_Conv1D_Tiny.keras
@@ -3835,7 +3834,6 @@ trainings/environment_lstm/pruned_model/run/environment_pruned_model_lstm.keras
 trainings/environment_lstm/pruned_model/run/manifest.json
 trainings/environment_lstm/quantized_model/
 trainings/environment_lstm/quantized_model/environment_quantized_model_lstm.py
-trainings/environment_lstm/quantized_model/environment_quantized_model_portg_lstm.py
 trainings/environment_lstm/quantized_model/latest.txt
 trainings/environment_lstm/quantized_model/run/
 trainings/environment_lstm/quantized_model/run/environment_qat_model_lstm.keras
@@ -3870,7 +3868,6 @@ trainings/environment_mlp/pruned_model/run/environment_pruned_model_mlp.keras
 trainings/environment_mlp/pruned_model/run/manifest.json
 trainings/environment_mlp/quantized_model/
 trainings/environment_mlp/quantized_model/environment_quantized_model_mlp.py
-trainings/environment_mlp/quantized_model/environment_quantized_model_portg_mlp.py
 trainings/environment_mlp/quantized_model/latest.txt
 trainings/environment_mlp/quantized_model/run/
 trainings/environment_mlp/quantized_model/run/environment_quantized_model_mlp.tflite

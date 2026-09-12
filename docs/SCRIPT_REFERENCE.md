@@ -25,8 +25,6 @@ All invocations below are executed from the repository root. The training script
 | LSTM | model header | `trainings/environment_lstm/header_generator/header_generator_lstm.py` | `python trainings/environment_lstm/header_generator/header_generator_lstm.py` | `environment_model_data_<model>.h` |
 | LSTM | scaler header | `trainings/environment_lstm/scalers_exporter/scale_vector_exporter_lstm.py` | `python trainings/environment_lstm/scalers_exporter/scale_vector_exporter_lstm.py` | `scalers_exported_<model>.h` |
 
-The `environment_quantized_model_portg_*.py` files are preserved alternate/portable copies of the quantized scripts. They are not used by the six checked-in YAML pipelines; the canonical pipeline files call `environment_quantized_model_*.py`.
-
 ## Pipeline and PlatformIO utilities
 
 | Script | Purpose | Main interface |
@@ -74,19 +72,16 @@ The table below covers all project-owned Python files. Third-party library sourc
 | `trainings/environment_Conv1D_Tiny/header_generator/header_generator_Conv1D_Tiny.py` | export | no | Converts the selected TFLite model into a C/C++ model-data header |
 | `trainings/environment_Conv1D_Tiny/pruned_model/environment_pruned_model_Conv1D_Tiny.py` | training | no | Loads the latest baseline run, prunes/fine-tunes, evaluates, and writes a versioned run |
 | `trainings/environment_Conv1D_Tiny/quantized_model/environment_quantized_model_Conv1D_Tiny.py` | training | no | Quantizes/converts the model and exports TFLite, Rolling-24, Replay, tensor, and metric evidence |
-| `trainings/environment_Conv1D_Tiny/quantized_model/environment_quantized_model_portg_Conv1D_Tiny.py` | training-alternate | no | Preserved alternate/portable quantized-model script; not called by the checked-in YAML pipelines |
 | `trainings/environment_Conv1D_Tiny/scalers_exporter/scale_vector_exporter_Conv1D_Tiny.py` | export | no | Exports fitted scaler constants and feature order to a firmware header |
 | `trainings/environment_lstm/base_model/environment_base_model_lstm.py` | training | no | Trains and evaluates the baseline model and writes a versioned run |
 | `trainings/environment_lstm/header_generator/header_generator_lstm.py` | export | no | Converts the selected TFLite model into a C/C++ model-data header |
 | `trainings/environment_lstm/pruned_model/environment_pruned_model_lstm.py` | training | no | Loads the latest baseline run, prunes/fine-tunes, evaluates, and writes a versioned run |
 | `trainings/environment_lstm/quantized_model/environment_quantized_model_lstm.py` | training | no | Quantizes/converts the model and exports TFLite, Rolling-24, Replay, tensor, and metric evidence |
-| `trainings/environment_lstm/quantized_model/environment_quantized_model_portg_lstm.py` | training-alternate | no | Preserved alternate/portable quantized-model script; not called by the checked-in YAML pipelines |
 | `trainings/environment_lstm/scalers_exporter/scale_vector_exporter_lstm.py` | export | no | Exports fitted scaler constants and feature order to a firmware header |
 | `trainings/environment_mlp/base_model/environment_base_model_mlp.py` | training | no | Trains and evaluates the baseline model and writes a versioned run |
 | `trainings/environment_mlp/header_generator/header_generator_mlp.py` | export | no | Converts the selected TFLite model into a C/C++ model-data header |
 | `trainings/environment_mlp/pruned_model/environment_pruned_model_mlp.py` | training | no | Loads the latest baseline run, prunes/fine-tunes, evaluates, and writes a versioned run |
 | `trainings/environment_mlp/quantized_model/environment_quantized_model_mlp.py` | training | no | Quantizes/converts the model and exports TFLite, Rolling-24, Replay, tensor, and metric evidence |
-| `trainings/environment_mlp/quantized_model/environment_quantized_model_portg_mlp.py` | training-alternate | no | Preserved alternate/portable quantized-model script; not called by the checked-in YAML pipelines |
 | `trainings/environment_mlp/scalers_exporter/scale_vector_exporter_mlp.py` | export | no | Exports fitted scaler constants and feature order to a firmware header |
 | `utils/global_utils/global_seed.py` | internal | no | Defines shared deterministic seed settings imported by training scripts |
 | `utils/global_utils/make_dirs_tree.py` | utility | yes | Creates a directory tree from a text plan |
