@@ -7,7 +7,7 @@ This document maps the contract tuple to the repository artifacts for the three 
 - `contracts/lstm_contract.json`
 - `contracts/tolerance_policy.json`
 
-The contract is not only a conceptual tuple. Each element is frozen, linked to an implementation artifact, and checked against Python and firmware evidence.
+Each contract element is explicitly defined and linked to the corresponding repository artifacts and implementation evidence.
 
 ## 1. Common data schema `S`
 
@@ -26,7 +26,7 @@ All three evaluated models use the same ordered 12-feature schema:
 11. `weekday`
 12. `month`
 
-Targets are `T_in` and `H_in`. Raw replay rows contain `epoch`, `T_out`, `H_out`, `T_in`, and `H_in_raw`. The ordering is normative: changing the order changes the contract even when the same variables are present.
+The model targets are the residuals `delta_T_in` and `delta_H_in`; the absolute `T_in` and `H_in` predictions are reconstructed later under `P`. Raw replay rows contain `epoch`, `T_out`, `H_out`, `T_in`, and `H_in_raw`. Before humidity lag construction, `H_in` is processed by the contract-defined causal EMA (`alpha = 0.08`). In Replay, the EMA starts from the exported pre-block state (`64.087463`); in Field, it initializes from the first valid `H_in` sample. The ordering is normative: changing the order changes the contract even when the same variables are present.
 
 Implementation evidence:
 
@@ -36,7 +36,7 @@ Implementation evidence:
 
 ## 2. Frozen constants `K`
 
-Each contract records the exact per-feature `X_MIN`, `X_MAX`, target-residual `DY_MIN`, `DY_MAX`, and feature ranges used by both host and firmware. These values are copied from the frozen experiment artifacts and are not re-fitted during replay verification.
+Each contract records the exact per-feature `X_MIN`, `X_MAX`, target-residual `DY_MIN`, `DY_MAX`, and feature ranges used by both host and firmware. Input features are clamped to the frozen training bounds before MinMax forward scaling, keeping the normalized input within `[0, 1]`. These values are copied from the frozen experiment artifacts and are not re-fitted during replay verification.
 
 Model-specific distinction:
 
@@ -57,21 +57,19 @@ The evaluated policy is identical across the three models:
 - seed rows: 2;
 - chronological replay rows: 47;
 - total raw rows: 49;
-- final reported valid events: 24;
-- humidity EMA coefficient: `0.08`;
-- initial humidity EMA state: `64.087463`.
+- final reported valid events: 24.
 
-The two seed rows initialize lag features and the causal humidity state and are not counted among the 47 chronological samples or the 24 reported events. A valid event is evaluated only after a complete 24-step window is available. Incomplete-window warm-up samples are excluded from stage-wise conformance counts and Rolling-24 metric aggregation. With `W=24`, stride 1, and `n=24`, the required chronological cardinality is `W + (n - 1) = 47`.
+The two seed rows initialize the lag history and advance the causal humidity state before the 47 chronological replay samples; they are not counted among the 47 chronological samples or the 24 reported events. A valid event is evaluated only after a complete 24-step window is available. Incomplete-window warm-up samples are excluded from stage-wise conformance counts and Rolling-24 metric aggregation. With `W=24`, stride 1, and `n=24`, the required chronological cardinality is `W + (n - 1) = 47`.
 
-## 4. Tensor and quantization contract `Q`
+## 4. Tensor I/O contract `Q`
 
-| Model | Input | Output | Input shape | Output layout | Quantization style |
+| Model | Input | Output | Input shape | Output layout | Tensor I/O class |
 |---|---|---|---|---|---|
 | MLP | INT8 | INT8 | `[1, 288]` | one tensor `[1, 2]` | `FULL_INT8` |
-| Conv1D Tiny | INT8 | float32 | `[1, 24, 12]` | two scalar tensors `[1, 1]` | `HYBRID_INT8_TO_FLOAT32_WITH_QDQ` |
-| LSTM | float32 | float32 | `[1, 24, 12]` | one tensor `[1, 2]` | `HYBRID_FLOAT_IO_WITH_SELECT_TF_OPS` |
+| Conv1D Tiny | INT8 | float32 | `[1, 24, 12]` | two scalar tensors `[1, 1]` | `HYBRID_INT8_TO_FLOAT32` |
+| LSTM | float32 | float32 | `[1, 24, 12]` | one tensor `[1, 2]` | `HYBRID_FLOAT_IO` |
 
-This element prevents apparently compatible models from being treated as equivalent when their tensor shape, dtype, output layout, or conversion path differs.
+This element prevents apparently compatible models from being treated as equivalent when their tensor shape, dtype, quantization metadata, or output layout/mapping differs. Converter/operator details such as Q/DQ structure or `SELECT_TF_OPS` are implementation notes, not part of the formal `Q` interface.
 
 Implementation evidence:
 
@@ -79,17 +77,14 @@ Implementation evidence:
 - generated model headers: `artifacts.model_header`;
 - tensor metadata and raw references: `artifacts.host_reference_evidence`.
 
-## 5. Processing and reconstruction `P`
+## 5. Post-processing and reconstruction `P`
 
 For every model:
 
-1. the causal EMA is applied to raw `H_in` before the humidity lag features are constructed;
-2. lag-1 and lag-2 features are constructed in chronological order;
-3. each input feature is clipped to the frozen training bounds and scaled to `[0, 1]`;
-4. the learned outputs represent residuals in the semantic order `delta_T_in`, `delta_H_in`;
-5. model outputs are inverse-scaled;
-6. absolute predictions are reconstructed as `T_in_lag1 + delta_T_in` and `H_in_lag1 + delta_H_in`;
-7. no additional calibration or head gain is applied.
+1. model outputs are mapped to the residual semantics `delta_T_in` and `delta_H_in`;
+2. the residual outputs are inverse-scaled using the frozen target scaler;
+3. absolute predictions are reconstructed as `T_in_lag1 + delta_T_in` and `H_in_lag1 + delta_H_in`;
+4. no affine correction, head gain, or output clipping is applied.
 
 The comparison workbooks separate model-input construction, raw/decoded model output, semantic output, and final reconstructed predictions. A pass at the final metric stage does not override an earlier-stage mismatch.
 
@@ -123,6 +118,6 @@ For a selected model:
 
 Commands are provided in `docs/REVIEWER_VERIFICATION_GUIDE.md`, `docs/END_TO_END_REPRODUCTION.md`, and `docs/FIRMWARE_BUILD_AND_HARDWARE.md`.
 
-## 8. Why three contract files are necessary
+## 8. Model-specific contract files
 
-The three models share `S`, most of `K`, `W`, `P`, and `M`, but they do not share the same `Q`. They also have model-specific frozen artifacts and slight scaler-bound differences. Separate machine-readable contracts prevent accidental substitution and make the Python-to-firmware equivalence claim auditable at the model level.
+A separate machine-readable contract is provided for each evaluated model. The three models use the same feature schema and Rolling-24 policy, while model-specific parameters and artifacts are recorded where applicable, including scaler bounds and tensor I/O specifications.
